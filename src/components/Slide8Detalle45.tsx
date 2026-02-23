@@ -74,21 +74,38 @@ export default function Slide8Detalle45() {
             </thead>
             <tbody>
               {data.map((r, i) => {
-                let belowCount = 0;
-                if (r.natDos < UMBRAL) belowCount++;
-                if (r.fuegoDos < UMBRAL) belowCount++;
-                if (r.jalDos < UMBRAL) belowCount++;
-                const needsRestock = belowCount >= 2;
+                const doses = [r.natDos, r.fuegoDos, r.jalDos];
+                const invs = [r.natInv, r.fuegoInv, r.jalInv];
+                const anaquelCount = doses.filter((d, j) => d === 0 && invs[j] > 0).length;
+                const restockCount = doses.filter(d => d > 0 && d < UMBRAL).length;
+                const hasAnaquelIssue = anaquelCount >= 2;
+                const needsRestock = restockCount >= 2;
+
+                let status: string;
+                let statusClass: string;
+                let rowClass = "";
+                if (hasAnaquelIssue) {
+                  status = "Anaquel";
+                  statusClass = "bg-orange-50 text-orange-600";
+                  rowClass = "bg-orange-50/30";
+                } else if (needsRestock) {
+                  status = "Restock";
+                  statusClass = "bg-red-50 text-red-600";
+                  rowClass = "bg-red-50/30";
+                } else {
+                  status = "OK";
+                  statusClass = "bg-green-50 text-green-700";
+                }
 
                 return (
-                  <tr key={i} className={`hover:bg-gray-50/50 transition-colors border-b border-gray-100 last:border-0 ${needsRestock ? "bg-red-50/30" : ""}`}>
+                  <tr key={i} className={`hover:bg-gray-50/50 transition-colors border-b border-gray-100 last:border-0 ${rowClass}`}>
                     <td className="px-4 py-1.5 text-gray-800 font-medium">{r.tienda}</td>
                     <td className="text-center px-3 py-1.5"><DosCell dos={r.natDos} inv={r.natInv} /></td>
                     <td className="text-center px-3 py-1.5"><DosCell dos={r.fuegoDos} inv={r.fuegoInv} /></td>
                     <td className="text-center px-3 py-1.5"><DosCell dos={r.jalDos} inv={r.jalInv} /></td>
                     <td className="text-center px-3 py-1.5">
-                      <span className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-semibold ${needsRestock ? "bg-red-50 text-red-600" : "bg-green-50 text-green-700"}`}>
-                        {needsRestock ? "Restock" : "OK"}
+                      <span className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-semibold ${statusClass}`}>
+                        {status}
                       </span>
                     </td>
                   </tr>
@@ -100,7 +117,7 @@ export default function Slide8Detalle45() {
       </div>
 
       <p className="text-[10px] text-gray-400 mt-2 text-center">
-        Formato: días de stock (inventario en unidades) · Rojo = DOS &lt; 15 días · Restock si 2+ sabores bajo umbral
+        DOS=0 con inventario = Anaquel (sin venta) · DOS &gt; 0 y &lt; 15 = bajo umbral · Restock si 2+ sabores con DOS &gt; 0 bajo umbral
       </p>
     </SlideWrapper>
   );

@@ -13,7 +13,6 @@ interface Row {
 }
 
 const data: Row[] = [
-  { tienda: "Cat Monterrey", nat: 0, natUmb: 0, fuego: 0, fuegoUmb: 0, jal: 0, jalUmb: 0 },
   { tienda: "MT MAT Las Brisas", nat: 192, natUmb: 130, fuego: 179, fuegoUmb: 98, jal: 209, jalUmb: 95 },
   { tienda: "MT NVO Reforma", nat: 292, natUmb: 126, fuego: 281, fuegoUmb: 92, jal: 299, jalUmb: 84 },
   { tienda: "MT MTY Eloy Cavazos", nat: 456, natUmb: 80, fuego: 424, fuegoUmb: 72, jal: 412, jalUmb: 80 },
@@ -60,7 +59,7 @@ export default function Slide8Detalle45() {
     <SlideWrapper className="bg-[#F5F5F5] p-10">
       <h2 className="text-2xl font-bold text-gray-800 mb-1">Detalle Inventario — PDQ 45gr</h2>
       <p className="text-sm text-gray-500 mb-3">
-        Inventario al 22-Feb-2026 · Umbral = 30% de venta promedio (últimos 4 periodos) · 26 tiendas · 100% cobertura
+        Inventario al 22-Feb-2026 · Umbral = 30% de venta promedio (últimos 4 periodos) · 25 tiendas · 100% cobertura
       </p>
 
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden flex-1">

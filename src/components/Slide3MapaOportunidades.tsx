@@ -11,7 +11,6 @@ interface StoreRow {
 }
 
 const stores: StoreRow[] = [
-  { tienda: "Cat Monterrey", pdq340: "SIN PRODUCTO", pdq45: "OK" },
   { tienda: "MT MTY Valle de Santa Maria", pdq340: "SIN PRODUCTO", pdq45: "OK" },
   { tienda: "MT MTY Aztlan", pdq340: "SIN PRODUCTO", pdq45: "OK" },
   { tienda: "MT REY Aeropuerto", pdq340: "SIN PRODUCTO", pdq45: "OK" },
@@ -48,7 +47,7 @@ export default function Slide3MapaOportunidades() {
   return (
     <SlideWrapper className="bg-[#F5F5F5] p-10">
       <h2 className="text-2xl font-bold text-gray-800 mb-1">Mapa de Oportunidades por Tienda</h2>
-      <p className="text-sm text-gray-500 mb-4">26 tiendas · 4 oportunidades de colocar PDQ 340gr · 0 restocks pendientes</p>
+      <p className="text-sm text-gray-500 mb-4">25 tiendas · 3 oportunidades de colocar PDQ 340gr · 0 restocks pendientes</p>
 
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden flex-1">
         <div className="overflow-y-auto max-h-[530px]">

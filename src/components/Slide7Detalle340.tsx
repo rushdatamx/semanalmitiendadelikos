@@ -13,7 +13,6 @@ interface Row {
 }
 
 const data: Row[] = [
-  { tienda: "Cat Monterrey", sal: null, salUmb: 0, fuego: null, fuegoUmb: 0, jal: null, jalUmb: 0 },
   { tienda: "MT MTY Valle de Sta María", sal: null, salUmb: 0, fuego: null, fuegoUmb: 0, jal: null, jalUmb: 0 },
   { tienda: "MT MTY Aztlan", sal: null, salUmb: 0, fuego: null, fuegoUmb: 0, jal: null, jalUmb: 0 },
   { tienda: "MT REY Aeropuerto", sal: null, salUmb: 0, fuego: null, fuegoUmb: 0, jal: null, jalUmb: 0 },
@@ -62,7 +61,7 @@ export default function Slide7Detalle340() {
     <SlideWrapper className="bg-[#F5F5F5] p-10">
       <h2 className="text-2xl font-bold text-gray-800 mb-1">Detalle Inventario — PDQ 340gr</h2>
       <p className="text-sm text-gray-500 mb-3">
-        Inventario al 22-Feb-2026 · Umbral = 30% de venta promedio (últimos 4 periodos) · 22 tiendas activas · 4 sin producto
+        Inventario al 22-Feb-2026 · Umbral = 30% de venta promedio (últimos 4 periodos) · 22 tiendas activas · 3 sin producto
       </p>
 
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden flex-1">

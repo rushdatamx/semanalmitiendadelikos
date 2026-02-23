@@ -37,9 +37,6 @@ const data: Row[] = [
   { tienda: "MT REY San Fernando", salDos: 42.0, fuegoDos: 45.2, jalDos: 39.9, salInv: 48, fuegoInv: 50, jalInv: 47 },
   { tienda: "MT MTY Lincoln", salDos: 66.5, fuegoDos: 132.5, jalDos: 78.7, salInv: 57, fuegoInv: 71, jalInv: 59 },
   { tienda: "MT MTY Anzures", salDos: 21.8, fuegoDos: 26.6, jalDos: 14.5, salInv: 35, fuegoInv: 39, jalInv: 27 },
-  { tienda: "MT MTY Valle de Sta María", salDos: null, fuegoDos: null, jalDos: null, salInv: null, fuegoInv: null, jalInv: null },
-  { tienda: "MT MTY Aztlan", salDos: null, fuegoDos: null, jalDos: null, salInv: null, fuegoInv: null, jalInv: null },
-  { tienda: "MT REY Aeropuerto", salDos: null, fuegoDos: null, jalDos: null, salInv: null, fuegoInv: null, jalInv: null },
 ];
 
 function DosCell({ dos, inv }: { dos: number | null; inv: number | null }) {
@@ -64,7 +61,7 @@ export default function Slide7Detalle340() {
     <SlideWrapper className="bg-[#F5F5F5] p-10">
       <h2 className="text-2xl font-bold text-gray-800 mb-1">Detalle Inventario — PDQ 340gr</h2>
       <p className="text-sm text-gray-500 mb-3">
-        Inventario al 22-Feb-2026 · DOS Unidades (Days of Stock) · Umbral: 15 días · Restock si 2+ sabores bajo · 22 tiendas activas · 3 sin producto
+        Inventario al 22-Feb-2026 · DOS Unidades (Days of Stock) · Umbral: 15 días · Restock si 2+ sabores bajo · 22 tiendas activas
       </p>
 
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden flex-1">
@@ -81,15 +78,13 @@ export default function Slide7Detalle340() {
             </thead>
             <tbody>
               {data.map((r, i) => {
-                const sinProducto = r.salDos === null;
                 let belowCount = 0;
-                if (!sinProducto) {
+                if (r.salDos !== null) {
                   if (r.salDos! < UMBRAL) belowCount++;
                   if (r.fuegoDos! < UMBRAL) belowCount++;
                   if (r.jalDos! < UMBRAL) belowCount++;
                 }
-                const needsRestock = !sinProducto && belowCount >= 2;
-                const isOk = !sinProducto && !needsRestock;
+                const needsRestock = belowCount >= 2;
 
                 return (
                   <tr key={i} className={`hover:bg-gray-50/50 transition-colors border-b border-gray-100 last:border-0 ${needsRestock ? "bg-red-50/30" : ""}`}>
@@ -98,13 +93,9 @@ export default function Slide7Detalle340() {
                     <td className="text-center px-3 py-1.5"><DosCell dos={r.fuegoDos} inv={r.fuegoInv} /></td>
                     <td className="text-center px-3 py-1.5"><DosCell dos={r.jalDos} inv={r.jalInv} /></td>
                     <td className="text-center px-3 py-1.5">
-                      {sinProducto ? (
-                        <span className="inline-block px-2 py-0.5 rounded-full text-[10px] font-semibold bg-gray-100 text-gray-500">Oportunidad</span>
-                      ) : needsRestock ? (
-                        <span className="inline-block px-2 py-0.5 rounded-full text-[10px] font-semibold bg-red-50 text-red-600">Restock</span>
-                      ) : (
-                        <span className="inline-block px-2 py-0.5 rounded-full text-[10px] font-semibold bg-green-50 text-green-700">OK</span>
-                      )}
+                      <span className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-semibold ${needsRestock ? "bg-red-50 text-red-600" : "bg-green-50 text-green-700"}`}>
+                        {needsRestock ? "Restock" : "OK"}
+                      </span>
                     </td>
                   </tr>
                 );

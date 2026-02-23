@@ -74,12 +74,12 @@ export default function Slide4DetalleRestock() {
         <div className="bg-[#F5A623]/10 rounded-lg p-3 text-center">
           <p className="text-[#F5A623] text-xs font-bold mb-1">PDQ 340gr</p>
           <p className="text-gray-800 font-bold text-lg">3 restocks</p>
-          <p className="text-gray-400 text-xs">19 tiendas OK · 3 sin producto</p>
+          <p className="text-gray-400 text-xs">19 tiendas OK</p>
         </div>
         <div className="bg-blue-50 rounded-lg p-3 text-center">
           <p className="text-blue-500 text-xs font-bold mb-1">PDQ 45gr</p>
           <p className="text-gray-800 font-bold text-lg">1 restock</p>
-          <p className="text-gray-400 text-xs">24 tiendas OK · 0 sin producto</p>
+          <p className="text-gray-400 text-xs">24 tiendas OK</p>
         </div>
       </div>
     </SlideWrapper>

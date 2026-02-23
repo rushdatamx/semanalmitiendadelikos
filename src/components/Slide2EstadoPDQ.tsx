@@ -10,8 +10,7 @@ const pdqData = [
     presencia: 22,
     ok: 19,
     restock: 3,
-    sinProducto: 3,
-    totalTiendas: 25,
+    totalTiendas: 22,
     cobertura: 88.0,
     color: "#F5A623",
   },
@@ -21,7 +20,6 @@ const pdqData = [
     presencia: 25,
     ok: 24,
     restock: 1,
-    sinProducto: 0,
     totalTiendas: 25,
     cobertura: 100.0,
     color: "#3B82F6",
@@ -55,7 +53,7 @@ export default function Slide2EstadoPDQ() {
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 gap-4">
               <div className="text-center p-4 bg-green-50 rounded-xl">
                 <CheckCircle className="w-5 h-5 text-green-600 mx-auto mb-1" />
                 <p className="text-3xl font-bold text-green-600">{pdq.ok}</p>
@@ -66,14 +64,10 @@ export default function Slide2EstadoPDQ() {
                 <p className="text-3xl font-bold text-orange-600">{pdq.restock}</p>
                 <p className="text-xs text-orange-700 mt-1">Necesitan Restock</p>
               </div>
-              <div className="text-center p-4 bg-gray-100 rounded-xl">
-                <p className="text-3xl font-bold text-gray-600">{pdq.sinProducto}</p>
-                <p className="text-xs text-gray-500 mt-1">Sin Producto</p>
-              </div>
             </div>
 
             <p className="text-xs text-gray-400 mt-4 text-center">
-              {pdq.presencia} de {pdq.totalTiendas} tiendas con presencia
+              {pdq.presencia} tiendas con presencia
             </p>
           </div>
         ))}

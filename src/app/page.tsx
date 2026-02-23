@@ -3,8 +3,6 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Slide1Portada from "@/components/Slide1Portada";
-import Slide2EstadoPDQ from "@/components/Slide2EstadoPDQ";
-import Slide3MapaOportunidades from "@/components/Slide3MapaOportunidades";
 import Slide4DetalleRestock from "@/components/Slide4DetalleRestock";
 import Slide5Tendencia from "@/components/Slide5Tendencia";
 import Slide6VentaPerdida from "@/components/Slide6VentaPerdida";
@@ -16,8 +14,6 @@ import Slide11Anaquel from "@/components/Slide11Anaquel";
 
 const slides = [
   Slide1Portada,
-  Slide2EstadoPDQ,
-  Slide3MapaOportunidades,
   Slide4DetalleRestock,
   Slide5Tendencia,
   Slide6VentaPerdida,

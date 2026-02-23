@@ -4,42 +4,25 @@ import SlideWrapper from "./SlideWrapper";
 
 export default function Slide1Portada() {
   return (
-    <SlideWrapper
-      className="bg-[#F5F5F5] justify-center items-center text-center relative"
-      hideFooter
-    >
-      {/* Glows sutiles */}
+    <SlideWrapper className="bg-[#F5F5F5] justify-center items-center text-center relative" hideFooter>
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
         <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-[#F5A623]/15 blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-red-600/8 blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-red-600/10 blur-3xl" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-white/60 blur-3xl" />
       </div>
-
       <div className="relative z-10 space-y-6">
-        {/* Logo DELIKOS */}
         <div className="flex justify-center">
-          <img
-            src="/delikos-logo.jpeg"
-            alt="Botanas Delikos"
-            className="h-44 object-contain"
-          />
+          <img src="/delikos-logo.jpeg" alt="Botanas Delikos" className="h-44 object-contain" />
         </div>
-
         <h1 className="text-4xl font-bold text-gray-800 tracking-tight leading-tight">
           Oportunidades de Crecimiento PDQ
         </h1>
-
-        {/* Logo MITIENDA placeholder */}
         <div className="flex items-center justify-center gap-2">
-          <span className="text-3xl font-black text-red-700 tracking-wider">
-            MITIENDA
-          </span>
+          <span className="text-3xl font-black text-red-700 tracking-wider">MITIENDA</span>
         </div>
-
         <p className="text-xl text-gray-500">Periodo Fiscal P04-2026</p>
-
-        <div className="inline-block mt-4 px-6 py-2 rounded-full border border-[#F5A623]/50 text-[#F5A623] text-sm font-semibold">
-          4 tiendas nuevas + 39 restocks pendientes
+        <div className="inline-block mt-4 px-6 py-2 rounded-full border border-[#27AE60]/50 text-[#27AE60] text-sm font-semibold">
+          0 restocks · 4 tiendas sin PDQ 340gr
         </div>
       </div>
     </SlideWrapper>

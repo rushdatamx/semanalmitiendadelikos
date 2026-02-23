@@ -8,6 +8,8 @@ import Slide3MapaOportunidades from "@/components/Slide3MapaOportunidades";
 import Slide4DetalleRestock from "@/components/Slide4DetalleRestock";
 import Slide5Tendencia from "@/components/Slide5Tendencia";
 import Slide6VentaPerdida from "@/components/Slide6VentaPerdida";
+import Slide7Detalle340 from "@/components/Slide7Detalle340";
+import Slide8Detalle45 from "@/components/Slide8Detalle45";
 
 const slides = [
   Slide1Portada,
@@ -16,6 +18,8 @@ const slides = [
   Slide4DetalleRestock,
   Slide5Tendencia,
   Slide6VentaPerdida,
+  Slide7Detalle340,
+  Slide8Detalle45,
 ];
 
 export default function Home() {

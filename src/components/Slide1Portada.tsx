@@ -22,7 +22,7 @@ export default function Slide1Portada() {
         </div>
         <p className="text-xl text-gray-500">Periodo Fiscal P04-2026</p>
         <div className="inline-block mt-4 px-6 py-2 rounded-full border border-[#27AE60]/50 text-[#27AE60] text-sm font-semibold">
-          0 restocks · 4 tiendas sin PDQ 340gr
+          0 restocks · 3 tiendas sin PDQ 340gr
         </div>
       </div>
     </SlideWrapper>

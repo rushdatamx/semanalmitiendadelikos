@@ -25,7 +25,7 @@ export default function Slide4DetalleRestock() {
             </div>
             <div className="bg-blue-50 rounded-lg p-4">
               <p className="text-blue-500 text-xs font-bold mb-1">PDQ 45gr</p>
-              <p className="text-gray-800 font-bold text-lg">26 tiendas OK</p>
+              <p className="text-gray-800 font-bold text-lg">25 tiendas OK</p>
               <p className="text-gray-400 text-xs">0 restocks pendientes</p>
             </div>
           </div>

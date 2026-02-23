@@ -61,7 +61,7 @@ export default function Slide7Detalle340() {
     <SlideWrapper className="bg-[#F5F5F5] p-10">
       <h2 className="text-2xl font-bold text-gray-800 mb-1">Detalle Inventario — PDQ 340gr</h2>
       <p className="text-sm text-gray-500 mb-3">
-        Inventario al 22-Feb-2026 · DOS Unidades (Days of Stock) · Umbral: 15 días · Restock si 2+ sabores bajo · 22 tiendas activas
+        Inventario al 22-Feb-2026 · DDI (Días de Inventario) · Umbral: 15 días · Restock si 2+ sabores bajo · 22 tiendas activas
       </p>
 
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden flex-1">
@@ -92,7 +92,7 @@ export default function Slide7Detalle340() {
                 let statusClass: string;
                 let rowClass = "";
                 if (hasAnaquelIssue) {
-                  status = "Anaquel";
+                  status = "Sin Venta";
                   statusClass = "bg-orange-50 text-orange-600";
                   rowClass = "bg-orange-50/30";
                 } else if (needsRestock) {
@@ -124,7 +124,7 @@ export default function Slide7Detalle340() {
       </div>
 
       <p className="text-[10px] text-gray-400 mt-2 text-center">
-        DOS=0 con inventario = Anaquel (sin venta) · DOS &gt; 0 y &lt; 15 = bajo umbral · Restock si 2+ sabores con DOS &gt; 0 bajo umbral
+        DDI=0 con inventario = Sin Venta · DDI &gt; 0 y &lt; 15 = bajo umbral · Restock si 2+ sabores con DDI &gt; 0 bajo umbral
       </p>
     </SlideWrapper>
   );

@@ -6,8 +6,8 @@ import { AlertTriangle, EyeOff, Info } from "lucide-react";
 export default function Slide4DetalleRestock() {
   return (
     <SlideWrapper className="bg-[#F5F5F5] p-10">
-      <h2 className="text-2xl font-bold text-gray-800 mb-1">Detalle de Restocks y Problemas de Anaquel</h2>
-      <p className="text-sm text-gray-500 mb-5">DOS=0 con inventario = Anaquel (tiene producto pero no vende) · DOS &gt; 0 y &lt; 15 días = Restock si 2+ sabores</p>
+      <h2 className="text-2xl font-bold text-gray-800 mb-1">Detalle de Restocks e Inventario sin Venta</h2>
+      <p className="text-sm text-gray-500 mb-5">DDI=0 con inventario = Sin Venta (tiene producto pero no vende) · DDI &gt; 0 y &lt; 15 días = Restock si 2+ sabores</p>
 
       {/* Restock real */}
       <div className="bg-white rounded-xl border border-red-200 shadow-sm p-5 mb-4">
@@ -20,7 +20,7 @@ export default function Slide4DetalleRestock() {
         </div>
         <div className="flex items-start gap-2 mb-3">
           <span className="text-[10px] font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded mt-0.5">45gr</span>
-          <span className="text-xs text-gray-600">Natural=8.7d, Fuego=8.8d, Jalapeño=12.0d — 3 sabores con venta activa pero bajo umbral de 15 días</span>
+          <span className="text-xs text-gray-600">Natural=8.7 DDI, Fuego=8.8 DDI, Jalapeño=12.0 DDI — 3 sabores con venta activa pero bajo umbral de 15 días</span>
         </div>
         <div className="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2">
           <Info className="w-3.5 h-3.5 text-gray-400 flex-shrink-0" />
@@ -32,26 +32,26 @@ export default function Slide4DetalleRestock() {
       <div className="space-y-3">
         <div className="flex items-center gap-2 mb-1">
           <EyeOff className="w-5 h-5 text-orange-500" />
-          <h3 className="text-base font-bold text-gray-800">Problemas de Anaquel — PDQ 340gr</h3>
+          <h3 className="text-base font-bold text-gray-800">Inventario sin Venta — PDQ 340gr</h3>
         </div>
 
         <div className="grid grid-cols-3 gap-3">
           <div className="bg-white rounded-xl border border-orange-200 shadow-sm p-4">
             <h4 className="text-sm font-bold text-gray-800 mb-1">Las Brisas</h4>
-            <span className="text-[9px] font-semibold px-1.5 py-0.5 rounded-full bg-orange-100 text-orange-600">Anaquel 340gr</span>
-            <p className="text-[11px] text-gray-500 mt-2">Sal=0d (81 uds), Fuego=0d (80 uds)</p>
-            <p className="text-[11px] text-gray-400">Jalapeño sí vende (1,141d)</p>
+            <span className="text-[9px] font-semibold px-1.5 py-0.5 rounded-full bg-orange-100 text-orange-600">Sin Venta 340gr</span>
+            <p className="text-[11px] text-gray-500 mt-2">Sal=0 DDI (81 uds), Fuego=0 DDI (80 uds)</p>
+            <p className="text-[11px] text-gray-400">Jalapeño sí vende (1,141 DDI)</p>
           </div>
           <div className="bg-white rounded-xl border border-orange-200 shadow-sm p-4">
             <h4 className="text-sm font-bold text-gray-800 mb-1">Satélite</h4>
-            <span className="text-[9px] font-semibold px-1.5 py-0.5 rounded-full bg-orange-100 text-orange-600">Anaquel 340gr</span>
-            <p className="text-[11px] text-gray-500 mt-2">3 sabores con DOS=0 (160 uds c/u)</p>
+            <span className="text-[9px] font-semibold px-1.5 py-0.5 rounded-full bg-orange-100 text-orange-600">Sin Venta 340gr</span>
+            <p className="text-[11px] text-gray-500 mt-2">3 sabores con DDI=0 (160 uds c/u)</p>
             <p className="text-[11px] text-gray-400">Nunca han vendido — PDQ sin exhibir</p>
           </div>
           <div className="bg-white rounded-xl border border-orange-200 shadow-sm p-4">
             <h4 className="text-sm font-bold text-gray-800 mb-1">Buena Vista</h4>
-            <span className="text-[9px] font-semibold px-1.5 py-0.5 rounded-full bg-orange-100 text-orange-600">Anaquel 340gr</span>
-            <p className="text-[11px] text-gray-500 mt-2">3 sabores con DOS=0 (160 uds c/u)</p>
+            <span className="text-[9px] font-semibold px-1.5 py-0.5 rounded-full bg-orange-100 text-orange-600">Sin Venta 340gr</span>
+            <p className="text-[11px] text-gray-500 mt-2">3 sabores con DDI=0 (160 uds c/u)</p>
             <p className="text-[11px] text-gray-400">Nunca han vendido — PDQ sin exhibir</p>
           </div>
         </div>
@@ -64,9 +64,9 @@ export default function Slide4DetalleRestock() {
           <p className="text-gray-400 text-xs">Las Brisas — 3 sabores bajo 15 días</p>
         </div>
         <div className="bg-orange-50 rounded-lg p-3 text-center">
-          <p className="text-orange-500 text-xs font-bold mb-1">Problemas de Anaquel</p>
+          <p className="text-orange-500 text-xs font-bold mb-1">Inventario sin Venta</p>
           <p className="text-gray-800 font-bold text-lg">3 tiendas PDQ 340gr</p>
-          <p className="text-gray-400 text-xs">Tienen inventario pero DOS=0 — verificar exhibición</p>
+          <p className="text-gray-400 text-xs">Tienen inventario pero DDI=0 — verificar exhibición</p>
         </div>
       </div>
     </SlideWrapper>

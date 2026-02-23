@@ -18,7 +18,7 @@ export default function Slide1Portada() {
           Oportunidades de Crecimiento PDQ
         </h1>
         <div className="flex items-center justify-center gap-2">
-          <span className="text-3xl font-black text-red-700 tracking-wider">MITIENDA</span>
+          <img src="/mitienda-logo.png" alt="MITIENDA" className="h-16 object-contain" />
         </div>
         <p className="text-xl text-gray-500">Periodo Fiscal P04-2026</p>
         <div className="inline-block mt-4 px-6 py-2 rounded-full border border-orange-400/50 text-orange-600 text-sm font-semibold">

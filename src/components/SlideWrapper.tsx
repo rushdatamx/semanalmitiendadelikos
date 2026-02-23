@@ -21,9 +21,7 @@ export default function SlideWrapper({
           <span className="text-[10px] text-gray-400">
             PDQ Oportunidades de Crecimiento · P04-2026
           </span>
-          <span className="text-[11px] font-bold text-red-700 tracking-wide">
-            MITIENDA
-          </span>
+          <img src="/mitienda-logo.png" alt="MITIENDA" className="h-8 object-contain" />
         </div>
       )}
     </div>

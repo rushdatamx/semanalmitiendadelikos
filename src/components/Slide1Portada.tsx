@@ -21,8 +21,8 @@ export default function Slide1Portada() {
           <span className="text-3xl font-black text-red-700 tracking-wider">MITIENDA</span>
         </div>
         <p className="text-xl text-gray-500">Periodo Fiscal P04-2026</p>
-        <div className="inline-block mt-4 px-6 py-2 rounded-full border border-[#27AE60]/50 text-[#27AE60] text-sm font-semibold">
-          0 restocks · 3 tiendas sin PDQ 340gr
+        <div className="inline-block mt-4 px-6 py-2 rounded-full border border-orange-400/50 text-orange-600 text-sm font-semibold">
+          4 restocks (3 PDQ 340gr + 1 PDQ 45gr) · 3 tiendas sin PDQ 340gr
         </div>
       </div>
     </SlideWrapper>

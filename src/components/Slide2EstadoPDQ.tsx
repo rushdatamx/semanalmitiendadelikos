@@ -1,14 +1,15 @@
 "use client";
 
 import SlideWrapper from "./SlideWrapper";
-import { Package, CheckCircle } from "lucide-react";
+import { Package, CheckCircle, AlertTriangle } from "lucide-react";
 
 const pdqData = [
   {
     tipo: "PDQ 340gr",
     piezas: "240 pzs (80 × sabor)",
     presencia: 22,
-    restock: 0,
+    ok: 19,
+    restock: 3,
     sinProducto: 3,
     totalTiendas: 25,
     cobertura: 88.0,
@@ -18,7 +19,8 @@ const pdqData = [
     tipo: "PDQ 45gr",
     piezas: "1,260 pzs (420 × sabor)",
     presencia: 25,
-    restock: 0,
+    ok: 24,
+    restock: 1,
     sinProducto: 0,
     totalTiendas: 25,
     cobertura: 100.0,
@@ -30,7 +32,7 @@ export default function Slide2EstadoPDQ() {
   return (
     <SlideWrapper className="bg-[#F5F5F5] p-10">
       <h2 className="text-2xl font-bold text-gray-800 mb-2">Estado General de los 2 PDQs</h2>
-      <p className="text-sm text-gray-500 mb-8">Todos los inventarios sobre el umbral 30% · 0 restocks pendientes</p>
+      <p className="text-sm text-gray-500 mb-8">Basado en DOS Unidades (Days of Stock) · Umbral: 15 días · Restock si 2+ sabores bajo umbral</p>
 
       <div className="grid grid-cols-2 gap-8 flex-1">
         {pdqData.map((pdq) => (
@@ -56,10 +58,11 @@ export default function Slide2EstadoPDQ() {
             <div className="grid grid-cols-3 gap-4">
               <div className="text-center p-4 bg-green-50 rounded-xl">
                 <CheckCircle className="w-5 h-5 text-green-600 mx-auto mb-1" />
-                <p className="text-3xl font-bold text-green-600">{pdq.presencia}</p>
+                <p className="text-3xl font-bold text-green-600">{pdq.ok}</p>
                 <p className="text-xs text-green-700 mt-1">Tiendas OK</p>
               </div>
               <div className="text-center p-4 bg-orange-50 rounded-xl">
+                <AlertTriangle className="w-5 h-5 text-orange-600 mx-auto mb-1" />
                 <p className="text-3xl font-bold text-orange-600">{pdq.restock}</p>
                 <p className="text-xs text-orange-700 mt-1">Necesitan Restock</p>
               </div>

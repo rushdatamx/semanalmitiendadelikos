@@ -5,13 +5,6 @@ import { ClipboardList } from "lucide-react";
 
 const acciones = [
   {
-    accion: "Registrar en OC",
-    pdq: "PDQ 340gr",
-    tiendas: "Todas (22)",
-    nota: "Dar de alta 3 SKUs en sistema OC HEB para reorden automático",
-    color: "purple",
-  },
-  {
     accion: "Restock",
     pdq: "PDQ 340gr",
     tiendas: "Reforma, Eloy Cavazos, Anzures",
@@ -35,7 +28,6 @@ const acciones = [
 ];
 
 const colorMap: Record<string, { bg: string; text: string; rowBg: string }> = {
-  purple: { bg: "bg-purple-100", text: "text-purple-700", rowBg: "bg-purple-50/40" },
   red: { bg: "bg-red-100", text: "text-red-700", rowBg: "bg-red-50/40" },
   orange: { bg: "bg-orange-100", text: "text-orange-700", rowBg: "bg-orange-50/40" },
 };
@@ -81,12 +73,7 @@ export default function SlideRecomendaciones() {
         </table>
       </div>
 
-      <div className="mt-5 grid grid-cols-3 gap-4">
-        <div className="bg-purple-50 rounded-lg p-3 text-center border border-purple-200">
-          <p className="text-purple-600 text-xs font-bold mb-1">Registrar en OC</p>
-          <p className="text-gray-800 font-bold text-lg">3 SKUs</p>
-          <p className="text-gray-400 text-[10px]">340gr sin OC en sistema HEB</p>
-        </div>
+      <div className="mt-5 grid grid-cols-2 gap-4">
         <div className="bg-red-50 rounded-lg p-3 text-center border border-red-200">
           <p className="text-red-500 text-xs font-bold mb-1">Restocks</p>
           <p className="text-gray-800 font-bold text-lg">5 tiendas</p>

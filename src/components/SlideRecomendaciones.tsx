@@ -7,8 +7,8 @@ const acciones = [
   {
     accion: "Registrar en OC",
     pdq: "PDQ 340gr",
-    tiendas: "Todas (21)",
-    nota: "Dar de alta 3 SKUs en sistema OC HEB — sin reorden automático",
+    tiendas: "Todas (22)",
+    nota: "Dar de alta 3 SKUs en sistema OC HEB para reorden automático",
     color: "purple",
   },
   {
@@ -22,7 +22,7 @@ const acciones = [
     accion: "Restock",
     pdq: "PDQ 45gr",
     tiendas: "Las Brisas, Reforma",
-    nota: "3 sabores con DDI bajo 15 días — Las Brisas prioridad alta",
+    nota: "3 sabores con DDI bajo 15 días — Las Brisas prioridad alta (3-5 DDI)",
     color: "red",
   },
   {
@@ -79,6 +79,24 @@ export default function SlideRecomendaciones() {
             })}
           </tbody>
         </table>
+      </div>
+
+      <div className="mt-5 grid grid-cols-3 gap-4">
+        <div className="bg-purple-50 rounded-lg p-3 text-center border border-purple-200">
+          <p className="text-purple-600 text-xs font-bold mb-1">Registrar en OC</p>
+          <p className="text-gray-800 font-bold text-lg">3 SKUs</p>
+          <p className="text-gray-400 text-[10px]">340gr sin OC en sistema HEB</p>
+        </div>
+        <div className="bg-red-50 rounded-lg p-3 text-center border border-red-200">
+          <p className="text-red-500 text-xs font-bold mb-1">Restocks</p>
+          <p className="text-gray-800 font-bold text-lg">5 tiendas</p>
+          <p className="text-gray-400 text-[10px]">3 de 340gr + 2 de 45gr</p>
+        </div>
+        <div className="bg-orange-50 rounded-lg p-3 text-center border border-orange-200">
+          <p className="text-orange-500 text-xs font-bold mb-1">Verificar anaquel</p>
+          <p className="text-gray-800 font-bold text-lg">1 tienda</p>
+          <p className="text-gray-400 text-[10px]">Satélite — inventario sin rotación</p>
+        </div>
       </div>
     </SlideWrapper>
   );

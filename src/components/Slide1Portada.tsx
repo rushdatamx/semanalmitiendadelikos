@@ -21,11 +21,11 @@ export default function Slide1Portada() {
           <img src="/mitienda-logo.png" alt="MITIENDA" className="h-16 object-contain" />
         </div>
         <p className="text-xl text-gray-500">Periodo Fiscal P05-2026</p>
-        <div className="inline-block mt-4 px-6 py-2 rounded-full border border-orange-400/50 text-orange-600 text-sm font-semibold">
+        <div className="inline-block mt-2 px-6 py-2 rounded-full border border-orange-400/50 text-orange-600 text-sm font-semibold">
           3 restock PDQ 340gr · 2 restock PDQ 45gr · 1 sin venta PDQ 340gr
         </div>
-        <div className="inline-block mt-2 px-6 py-2 rounded-full border border-red-400/50 bg-red-50 text-red-700 text-sm font-semibold">
-          ⚠ PDQ 340gr: Sin OC en sistema HEB — 3 tiendas en riesgo
+        <div className="inline-block px-5 py-1.5 rounded-full border border-red-400/60 bg-red-50 text-red-600 text-xs font-bold">
+          PDQ 340gr: Sin OC en sistema HEB — 3 tiendas en riesgo
         </div>
       </div>
     </SlideWrapper>

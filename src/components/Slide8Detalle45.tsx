@@ -61,7 +61,7 @@ export default function Slide8Detalle45() {
       </p>
 
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden flex-1">
-        <div className="overflow-y-auto max-h-[540px]">
+        <div className="overflow-y-auto max-h-[500px]">
           <table className="w-full text-xs">
             <thead className="sticky top-0 bg-gray-50 z-10">
               <tr>
@@ -116,11 +116,8 @@ export default function Slide8Detalle45() {
         </div>
       </div>
 
-      <p className="text-[10px] text-gray-400 mt-2 text-center">
-        DDI=0 con inventario = Sin Venta · DDI &gt; 0 y &lt; 15 = bajo umbral · Restock si 2+ sabores con DDI &gt; 0 bajo umbral
-      </p>
-      <p className="text-[10px] text-blue-600 font-semibold mt-1 text-center">
-        ✓ OC activo: 990 uds/semana (tendencia: +175% en 3 semanas)
+      <p className="text-[10px] text-green-600 mt-2 text-center font-semibold">
+        OC activo: 2,501 uds/semana (tendencia: +63% vs semana anterior) · Última OC: 27-Feb-2026
       </p>
     </SlideWrapper>
   );

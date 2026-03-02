@@ -119,6 +119,9 @@ export default function Slide8Detalle45() {
       <p className="text-[10px] text-gray-400 mt-2 text-center">
         DDI=0 con inventario = Sin Venta · DDI &gt; 0 y &lt; 15 = bajo umbral · Restock si 2+ sabores con DDI &gt; 0 bajo umbral
       </p>
+      <p className="text-[10px] text-blue-600 font-semibold mt-1 text-center">
+        ✓ OC activo: 990 uds/semana (tendencia: +175% en 3 semanas)
+      </p>
     </SlideWrapper>
   );
 }

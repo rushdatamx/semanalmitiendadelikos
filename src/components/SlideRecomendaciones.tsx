@@ -5,29 +5,37 @@ import { ClipboardList } from "lucide-react";
 
 const acciones = [
   {
+    accion: "Registrar en OC",
+    pdq: "PDQ 340gr",
+    tiendas: "Todas (21)",
+    nota: "Dar de alta 3 SKUs en sistema OC HEB — sin reorden automático",
+    color: "purple",
+  },
+  {
     accion: "Restock",
     pdq: "PDQ 340gr",
     tiendas: "Reforma, Eloy Cavazos, Anzures",
-    nota: "2-3 sabores con DDI bajo 15 días — Anzures el más crítico (3 sabores bajo)",
+    nota: "2-3 sabores con DDI bajo 15 días — Anzures el más crítico",
     color: "red",
   },
   {
     accion: "Restock",
     pdq: "PDQ 45gr",
     tiendas: "Las Brisas, Reforma",
-    nota: "3 sabores con DDI bajo 15 días — Las Brisas es prioridad alta (3-5 DDI)",
+    nota: "3 sabores con DDI bajo 15 días — Las Brisas prioridad alta",
     color: "red",
   },
   {
     accion: "Verificar anaquel",
     pdq: "PDQ 340gr",
     tiendas: "Satélite",
-    nota: "Tiene inventario (160 uds c/sabor) pero DDI=0 — posible falta de exhibición",
+    nota: "Tiene inventario (160 uds c/sabor) pero DDI=0 — sin rotación",
     color: "orange",
   },
 ];
 
 const colorMap: Record<string, { bg: string; text: string; rowBg: string }> = {
+  purple: { bg: "bg-purple-100", text: "text-purple-700", rowBg: "bg-purple-50/40" },
   red: { bg: "bg-red-100", text: "text-red-700", rowBg: "bg-red-50/40" },
   orange: { bg: "bg-orange-100", text: "text-orange-700", rowBg: "bg-orange-50/40" },
 };

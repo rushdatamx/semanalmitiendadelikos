@@ -19,7 +19,7 @@ export default function SlideWrapper({
       {!hideFooter && (
         <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-8 py-3 bg-gradient-to-t from-white/60 to-transparent">
           <span className="text-[10px] text-gray-400">
-            PDQ Oportunidades de Crecimiento · P04-2026
+            PDQ Oportunidades de Crecimiento · P05-2026
           </span>
           <img src="/mitienda-logo.png" alt="MITIENDA" className="h-8 object-contain" />
         </div>

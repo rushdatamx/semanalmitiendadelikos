@@ -15,31 +15,31 @@ interface Row {
 const UMBRAL = 15;
 
 const data: Row[] = [
-  { tienda: "MT MAT Las Brisas", natDos: 8.7, fuegoDos: 8.8, jalDos: 12.0, natInv: 192, fuegoInv: 179, jalInv: 209 },
-  { tienda: "MT NVO Reforma", natDos: 13.7, fuegoDos: 19.9, jalDos: 22.1, natInv: 292, fuegoInv: 281, jalInv: 299 },
-  { tienda: "MT MTY Eloy Cavazos", natDos: 55.3, fuegoDos: 47.9, jalDos: 44.2, natInv: 456, fuegoInv: 424, jalInv: 412 },
-  { tienda: "MT MTY Zuazua", natDos: 32.0, fuegoDos: 62.7, jalDos: 64.6, natInv: 545, fuegoInv: 475, jalInv: 482 },
-  { tienda: "MT MTY Garcia", natDos: 46.8, fuegoDos: 29.5, jalDos: 40.0, natInv: 535, fuegoInv: 376, jalInv: 413 },
-  { tienda: "MT MTY Cabezada", natDos: 24.4, fuegoDos: 54.2, jalDos: 54.1, natInv: 234, fuegoInv: 333, jalInv: 288 },
-  { tienda: "MT MTY Plaza del Bosque", natDos: 41.1, fuegoDos: 74.9, jalDos: 65.6, natInv: 613, fuegoInv: 733, jalInv: 715 },
-  { tienda: "MT REY Bugambilias", natDos: 131.8, fuegoDos: 185.6, jalDos: 156.5, natInv: 998, fuegoInv: 835, jalInv: 1006 },
-  { tienda: "MT MTY Metroplex", natDos: 48.3, fuegoDos: 83.0, jalDos: 44.2, natInv: 240, fuegoInv: 255, jalInv: 169 },
-  { tienda: "MT SAL Satelite", natDos: 92.2, fuegoDos: 156.7, jalDos: 127.0, natInv: 807, fuegoInv: 817, jalInv: 780 },
-  { tienda: "MT MTY Valle de Sta María", natDos: 172.4, fuegoDos: 144.1, jalDos: 269.7, natInv: 234, fuegoInv: 211, jalInv: 260 },
-  { tienda: "MT MTY Margaritas", natDos: 351.1, fuegoDos: 169.5, jalDos: 205.7, natInv: 514, fuegoInv: 448, jalInv: 294 },
-  { tienda: "MT NVO Revolucion", natDos: 22.0, fuegoDos: 27.5, jalDos: 19.4, natInv: 377, fuegoInv: 404, jalInv: 310 },
-  { tienda: "MT MTY Aztlan", natDos: 280.0, fuegoDos: 758.3, jalDos: 248.6, natInv: 450, fuegoInv: 433, jalInv: 444 },
-  { tienda: "MT MTY San Roque", natDos: 100.2, fuegoDos: 154.0, jalDos: 176.2, natInv: 562, fuegoInv: 561, jalInv: 560 },
-  { tienda: "MT REY Periferico", natDos: 60.3, fuegoDos: 60.3, jalDos: 70.8, natInv: 564, fuegoInv: 510, jalInv: 521 },
-  { tienda: "MT REY Rio Bravo", natDos: 122.0, fuegoDos: 127.5, jalDos: 85.4, natInv: 257, fuegoInv: 264, jalInv: 293 },
-  { tienda: "MT MTY Ciudadela", natDos: 52.0, fuegoDos: 56.4, jalDos: 41.0, natInv: 552, fuegoInv: 502, jalInv: 442 },
-  { tienda: "MT SAL Fundadores", natDos: 95.2, fuegoDos: 121.8, jalDos: 82.3, natInv: 748, fuegoInv: 696, jalInv: 644 },
-  { tienda: "MT MTY Huinala", natDos: 65.8, fuegoDos: 61.5, jalDos: 76.5, natInv: 576, fuegoInv: 488, jalInv: 544 },
-  { tienda: "MT REY Aeropuerto", natDos: 17.7, fuegoDos: 51.1, jalDos: 29.5, natInv: 137, fuegoInv: 186, jalInv: 157 },
-  { tienda: "MT MTY Buena Vista", natDos: 48.7, fuegoDos: 69.9, jalDos: 65.2, natInv: 530, fuegoInv: 597, jalInv: 601 },
-  { tienda: "MT REY San Fernando", natDos: 21.0, fuegoDos: 17.3, jalDos: 20.9, natInv: 215, fuegoInv: 124, jalInv: 157 },
-  { tienda: "MT MTY Lincoln", natDos: 31.9, fuegoDos: 59.2, jalDos: 43.5, natInv: 237, fuegoInv: 334, jalInv: 300 },
-  { tienda: "MT MTY Anzures", natDos: 145.9, fuegoDos: 237.5, jalDos: 158.5, natInv: 375, fuegoInv: 407, jalInv: 385 },
+  { tienda: "MT MAT Las Brisas", natDos: 3.0, fuegoDos: 3.6, jalDos: 4.7, natInv: 55, fuegoInv: 64, jalInv: 81 },
+  { tienda: "MT NVO Reforma", natDos: 7.4, fuegoDos: 12.1, jalDos: 9.2, natInv: 178, fuegoInv: 194, jalInv: 162 },
+  { tienda: "MT MTY Eloy Cavazos", natDos: 29.6, fuegoDos: 48.8, jalDos: 33.6, natInv: 263, fuegoInv: 380, jalInv: 306 },
+  { tienda: "MT MTY Zuazua", natDos: 35.5, fuegoDos: 107.0, jalDos: 79.3, natInv: 479, fuegoInv: 474, jalInv: 453 },
+  { tienda: "MT MTY Garcia", natDos: 31.5, fuegoDos: 17.3, jalDos: 23.1, natInv: 445, fuegoInv: 277, jalInv: 317 },
+  { tienda: "MT MTY Cabezada", natDos: 13.4, fuegoDos: 31.5, jalDos: 49.4, natInv: 146, fuegoInv: 245, jalInv: 256 },
+  { tienda: "MT MTY Plaza del Bosque", natDos: 20.4, fuegoDos: 41.8, jalDos: 33.3, natInv: 408, fuegoInv: 564, jalInv: 505 },
+  { tienda: "MT REY Bugambilias", natDos: 130.4, fuegoDos: 146.5, jalDos: 129.7, natInv: 964, fuegoInv: 790, jalInv: 954 },
+  { tienda: "MT MTY Metroplex", natDos: 85.1, fuegoDos: 162.3, jalDos: 94.6, natInv: 240, fuegoInv: 255, jalInv: 169 },
+  { tienda: "MT SAL Satelite", natDos: 98.8, fuegoDos: 136.1, jalDos: 112.6, natInv: 759, fuegoInv: 768, jalInv: 724 },
+  { tienda: "MT MTY Valle de Sta María", natDos: 98.5, fuegoDos: 129.9, jalDos: 257.0, natInv: 211, fuegoInv: 204, jalInv: 257 },
+  { tienda: "MT MTY Margaritas", natDos: 221.8, fuegoDos: 285.2, jalDos: 338.4, natInv: 491, fuegoInv: 448, jalInv: 290 },
+  { tienda: "MT NVO Revolucion", natDos: 20.7, fuegoDos: 23.0, jalDos: 13.5, natInv: 357, fuegoInv: 367, jalInv: 229 },
+  { tienda: "MT MTY Aztlan", natDos: 280.0, fuegoDos: 257.8, jalDos: 132.5, natInv: 450, fuegoInv: 405, jalInv: 407 },
+  { tienda: "MT MTY San Roque", natDos: 54.7, fuegoDos: 97.1, jalDos: 89.0, natInv: 471, fuegoInv: 510, jalInv: 467 },
+  { tienda: "MT REY Periferico", natDos: 44.5, fuegoDos: 59.1, jalDos: 58.9, natInv: 496, fuegoInv: 464, jalInv: 469 },
+  { tienda: "MT REY Rio Bravo", natDos: 74.6, fuegoDos: 119.0, jalDos: 76.0, natInv: 229, fuegoInv: 255, jalInv: 266 },
+  { tienda: "MT MTY Ciudadela", natDos: 64.8, fuegoDos: 83.5, jalDos: 64.8, natInv: 500, fuegoInv: 468, jalInv: 419 },
+  { tienda: "MT SAL Fundadores", natDos: 40.4, fuegoDos: 49.0, jalDos: 42.2, natInv: 571, fuegoInv: 544, jalInv: 519 },
+  { tienda: "MT MTY Huinala", natDos: 113.2, fuegoDos: 107.3, jalDos: 119.8, natInv: 566, fuegoInv: 483, jalInv: 522 },
+  { tienda: "MT REY Aeropuerto", natDos: 33.0, fuegoDos: 68.0, jalDos: 39.6, natInv: 204, fuegoInv: 170, jalInv: 181 },
+  { tienda: "MT MTY Buena Vista", natDos: 42.4, fuegoDos: 52.7, jalDos: 50.4, natInv: 407, fuegoInv: 486, jalInv: 500 },
+  { tienda: "MT REY San Fernando", natDos: 32.5, fuegoDos: 37.4, jalDos: 28.3, natInv: 259, fuegoInv: 183, jalInv: 171 },
+  { tienda: "MT MTY Lincoln", natDos: 34.4, fuegoDos: 36.7, jalDos: 28.3, natInv: 227, fuegoInv: 245, jalInv: 215 },
+  { tienda: "MT MTY Anzures", natDos: 99.7, fuegoDos: 139.3, jalDos: 89.4, natInv: 349, fuegoInv: 378, jalInv: 345 },
 ];
 
 function DosCell({ dos, inv }: { dos: number; inv: number }) {
@@ -57,7 +57,7 @@ export default function Slide8Detalle45() {
     <SlideWrapper className="bg-[#F5F5F5] p-10">
       <h2 className="text-2xl font-bold text-gray-800 mb-1">Detalle Inventario — PDQ 45gr</h2>
       <p className="text-sm text-gray-500 mb-3">
-        Inventario al 22-Feb-2026 · DDI (Días de Inventario) · Umbral: 15 días · 25 tiendas · 100% cobertura
+        Inventario al 01-Mar-2026 · DDI (Días de Inventario) · Umbral: 15 días · 25 tiendas · 100% cobertura
       </p>
 
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden flex-1">

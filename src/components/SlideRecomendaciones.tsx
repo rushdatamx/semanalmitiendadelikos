@@ -7,22 +7,22 @@ const acciones = [
   {
     accion: "Restock",
     pdq: "PDQ 340gr",
-    tiendas: "Las Brisas, Satélite, Buena Vista",
-    nota: "Inventario sin rotación — verificar exhibición en tienda",
+    tiendas: "Reforma, Eloy Cavazos, Anzures",
+    nota: "2-3 sabores con DDI bajo 15 días — Anzures el más crítico (3 sabores bajo)",
     color: "red",
   },
   {
     accion: "Restock",
     pdq: "PDQ 45gr",
-    tiendas: "Las Brisas",
-    nota: "3 sabores con DDI bajo 15 días (8.7, 8.8, 12.0)",
+    tiendas: "Las Brisas, Reforma",
+    nota: "3 sabores con DDI bajo 15 días — Las Brisas es prioridad alta (3-5 DDI)",
     color: "red",
   },
   {
     accion: "Verificar anaquel",
     pdq: "PDQ 340gr",
-    tiendas: "Las Brisas, Satélite, Buena Vista",
-    nota: "Tienen inventario pero sin venta — posible falta de exhibición",
+    tiendas: "Satélite",
+    nota: "Tiene inventario (160 uds c/sabor) pero DDI=0 — posible falta de exhibición",
     color: "orange",
   },
 ];
@@ -40,7 +40,7 @@ export default function SlideRecomendaciones() {
         <h2 className="text-2xl font-bold text-gray-800">Recomendaciones</h2>
       </div>
       <p className="text-sm text-gray-500 mb-6">
-        Acciones puntuales basadas en el análisis de inventario al 22-Feb-2026
+        Acciones puntuales basadas en el análisis de inventario al 01-Mar-2026
       </p>
 
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">

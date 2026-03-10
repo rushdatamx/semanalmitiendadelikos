@@ -5,24 +5,31 @@ import { ClipboardList } from "lucide-react";
 
 const acciones = [
   {
+    accion: "Registrar en OC",
+    pdq: "PDQ 340gr",
+    tiendas: "Todas",
+    nota: "Dar de alta 3 SKUs de 340gr en sistema OC HEB",
+    color: "purple",
+  },
+  {
     accion: "Restock",
     pdq: "PDQ 340gr",
     tiendas: "Reforma, Eloy Cavazos, Anzures",
-    nota: "2-3 sabores con DDI bajo 15 días — Anzures el más crítico",
+    nota: "2-3 sabores con DDI bajo 15 días — todos sin OC",
     color: "red",
   },
   {
     accion: "Restock",
     pdq: "PDQ 45gr",
-    tiendas: "Las Brisas, Reforma",
-    nota: "3 sabores con DDI bajo 15 días — Las Brisas prioridad alta (3-5 DDI)",
+    tiendas: "Las Brisas, Reforma, García, Cabezada",
+    nota: "2+ sabores bajo umbral — García sin OC, Cabezada parcial",
     color: "red",
   },
   {
     accion: "Verificar anaquel",
-    pdq: "PDQ 340gr",
-    tiendas: "Satélite",
-    nota: "Tiene inventario (160 uds c/sabor) pero DDI=0 — sin rotación",
+    pdq: "PDQ 45gr",
+    tiendas: "Cat Monterrey",
+    nota: "Sin inventario ni ventas — verificar si tiene PDQ",
     color: "orange",
   },
 ];
@@ -30,6 +37,7 @@ const acciones = [
 const colorMap: Record<string, { bg: string; text: string; rowBg: string }> = {
   red: { bg: "bg-red-100", text: "text-red-700", rowBg: "bg-red-50/40" },
   orange: { bg: "bg-orange-100", text: "text-orange-700", rowBg: "bg-orange-50/40" },
+  purple: { bg: "bg-purple-100", text: "text-purple-700", rowBg: "bg-purple-50/40" },
 };
 
 export default function SlideRecomendaciones() {
@@ -40,7 +48,7 @@ export default function SlideRecomendaciones() {
         <h2 className="text-2xl font-bold text-gray-800">Recomendaciones</h2>
       </div>
       <p className="text-sm text-gray-500 mb-6">
-        Acciones puntuales basadas en el análisis de inventario al 01-Mar-2026
+        Acciones basadas en análisis de inventario al 08-Mar-2026
       </p>
 
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
@@ -73,16 +81,21 @@ export default function SlideRecomendaciones() {
         </table>
       </div>
 
-      <div className="mt-5 grid grid-cols-2 gap-4">
+      <div className="mt-5 grid grid-cols-3 gap-4">
+        <div className="bg-purple-50 rounded-lg p-3 text-center border border-purple-200">
+          <p className="text-purple-500 text-xs font-bold mb-1">Registrar en OC</p>
+          <p className="text-gray-800 font-bold text-lg">1 acción</p>
+          <p className="text-gray-400 text-[10px]">340gr sin sistema OC en HEB</p>
+        </div>
         <div className="bg-red-50 rounded-lg p-3 text-center border border-red-200">
           <p className="text-red-500 text-xs font-bold mb-1">Restocks</p>
-          <p className="text-gray-800 font-bold text-lg">5 tiendas</p>
-          <p className="text-gray-400 text-[10px]">3 de 340gr + 2 de 45gr</p>
+          <p className="text-gray-800 font-bold text-lg">7 tiendas</p>
+          <p className="text-gray-400 text-[10px]">3 de 340gr + 4 de 45gr</p>
         </div>
         <div className="bg-orange-50 rounded-lg p-3 text-center border border-orange-200">
           <p className="text-orange-500 text-xs font-bold mb-1">Verificar anaquel</p>
           <p className="text-gray-800 font-bold text-lg">1 tienda</p>
-          <p className="text-gray-400 text-[10px]">Satélite — inventario sin rotación</p>
+          <p className="text-gray-400 text-[10px]">Cat Monterrey — sin inventario ni ventas</p>
         </div>
       </div>
     </SlideWrapper>

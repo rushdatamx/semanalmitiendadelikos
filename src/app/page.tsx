@@ -15,6 +15,7 @@ import SlidePostRestockResumen from "@/components/SlidePostRestockResumen";
 import SlidePostRestockConsumo from "@/components/SlidePostRestockConsumo";
 import SlidePostRestockRanking from "@/components/SlidePostRestockRanking";
 import SlidePostRestockTendencia from "@/components/SlidePostRestockTendencia";
+import SlidePostRestockSellThrough from "@/components/SlidePostRestockSellThrough";
 
 const tabs = [
   {
@@ -37,6 +38,7 @@ const tabs = [
       SlidePostRestockResumen,
       SlidePostRestockConsumo,
       SlidePostRestockRanking,
+      SlidePostRestockSellThrough,
       SlidePostRestockTendencia,
     ],
   },

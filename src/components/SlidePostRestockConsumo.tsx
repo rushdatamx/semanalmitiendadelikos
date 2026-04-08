@@ -15,17 +15,17 @@ import {
 import { TrendingUp } from "lucide-react";
 
 const weekly340 = [
-  { week: "Sem 1", label: "Mar 9-15", uds: 498, avg: 71, type: "pre" },
-  { week: "Sem 2", label: "Mar 16-22", uds: 503, avg: 72, type: "pre" },
-  { week: "Sem 3", label: "Mar 23-29", uds: 455, avg: 65, type: "restock" },
-  { week: "Sem 4", label: "Mar 30-Abr 5", uds: 963, avg: 138, type: "post" },
+  { week: "Mar 9-15", label: "Mar 9-15", uds: 498, avg: 71, type: "pre" },
+  { week: "Mar 16-22", label: "Mar 16-22", uds: 503, avg: 72, type: "pre" },
+  { week: "Mar 23-29", label: "Mar 23-29", uds: 455, avg: 65, type: "restock" },
+  { week: "Mar 30-Abr 5", label: "Mar 30-Abr 5", uds: 963, avg: 138, type: "post" },
 ];
 
 const weekly45 = [
-  { week: "Sem 1", label: "Mar 9-15", uds: 4680, avg: 669, type: "pre" },
-  { week: "Sem 2", label: "Mar 16-22", uds: 3139, avg: 448, type: "pre" },
-  { week: "Sem 3", label: "Mar 23-29", uds: 3231, avg: 462, type: "restock" },
-  { week: "Sem 4", label: "Mar 30-Abr 5", uds: 4297, avg: 614, type: "post" },
+  { week: "Mar 9-15", label: "Mar 9-15", uds: 4680, avg: 669, type: "pre" },
+  { week: "Mar 16-22", label: "Mar 16-22", uds: 3139, avg: 448, type: "pre" },
+  { week: "Mar 23-29", label: "Mar 23-29", uds: 3231, avg: 462, type: "restock" },
+  { week: "Mar 30-Abr 5", label: "Mar 30-Abr 5", uds: 4297, avg: 614, type: "post" },
 ];
 
 const fmtN = (v: number) => v.toLocaleString("es-MX");

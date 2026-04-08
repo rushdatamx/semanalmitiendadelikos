@@ -1,7 +1,7 @@
 "use client";
 
 import SlideWrapper from "./SlideWrapper";
-import { AlertTriangle, ShieldAlert } from "lucide-react";
+import { Eye, ShieldAlert } from "lucide-react";
 
 interface TiendaRow {
   tienda: string;
@@ -11,16 +11,14 @@ interface TiendaRow {
   fuegoInv: number;
   jalDDI: number;
   jalInv: number;
-  status: "Urgente" | "1 sabor bajo" | "OK";
+  status: "Monitoreando" | "OK";
+  sabor: string;
 }
 
 const tiendas: TiendaRow[] = [
-  { tienda: "Anzures", salDDI: 7.3, salInv: 13, fuegoDDI: 9.0, fuegoInv: 16, jalDDI: 1.4, jalInv: 3, status: "Urgente" },
-  { tienda: "Reforma", salDDI: 4.3, salInv: 8, fuegoDDI: 18.0, fuegoInv: 29, jalDDI: 7.6, jalInv: 12, status: "Urgente" },
-  { tienda: "Eloy Cavazos", salDDI: 4.0, salInv: 7, fuegoDDI: 30.2, fuegoInv: 42, jalDDI: 7.1, jalInv: 14, status: "Urgente" },
-  { tienda: "Plaza del Bosque", salDDI: 9.0, salInv: 20, fuegoDDI: 59.8, fuegoInv: 62, jalDDI: 42.8, jalInv: 52, status: "1 sabor bajo" },
-  { tienda: "San Fernando", salDDI: 28.0, salInv: 0, fuegoDDI: 25.7, fuegoInv: 0, jalDDI: 16.1, jalInv: 0, status: "OK" },
-  { tienda: "Huinala", salDDI: 16.5, salInv: 0, fuegoDDI: 42.7, fuegoInv: 0, jalDDI: 16.2, jalInv: 0, status: "OK" },
+  { tienda: "Reforma", salDDI: 7.6, salInv: 30, fuegoDDI: 18.7, fuegoInv: 49, jalDDI: 20.5, jalInv: 49, status: "Monitoreando", sabor: "Sal" },
+  { tienda: "Anzures", salDDI: 16.9, salInv: 52, fuegoDDI: 51.2, fuegoInv: 67, jalDDI: 12.4, jalInv: 39, status: "Monitoreando", sabor: "Jalapeno" },
+  { tienda: "Fundadores", salDDI: 14.4, salInv: 59, fuegoDDI: 52.4, fuegoInv: 144, jalDDI: 19.2, jalInv: 72, status: "Monitoreando", sabor: "Sal" },
 ];
 
 function ddiColor(ddi: number): string {
@@ -29,16 +27,10 @@ function ddiColor(ddi: number): string {
 }
 
 function statusBadge(status: TiendaRow["status"]) {
-  if (status === "Urgente")
-    return (
-      <span className="text-[9px] font-bold px-2 py-0.5 rounded-full bg-red-100 text-red-700 border border-red-200">
-        Urgente
-      </span>
-    );
-  if (status === "1 sabor bajo")
+  if (status === "Monitoreando")
     return (
       <span className="text-[9px] font-bold px-2 py-0.5 rounded-full bg-yellow-100 text-yellow-700 border border-yellow-200">
-        1 sabor bajo
+        Monitoreando
       </span>
     );
   return (
@@ -52,13 +44,13 @@ export default function SlideAlerta340() {
   return (
     <SlideWrapper className="bg-[#F5F5F5] p-10">
       <div className="flex items-center gap-3 mb-1">
-        <ShieldAlert className="w-7 h-7 text-red-500" />
+        <Eye className="w-7 h-7 text-yellow-500" />
         <h2 className="text-2xl font-bold text-gray-800">
-          Alerta: PDQ 340gr sin Orden de Compra
+          PDQ 340gr: Monitoreo — Sin OC en Sistema
         </h2>
       </div>
       <p className="text-sm text-gray-500 mb-5">
-        Tiendas con DDI &lt; 15 en al menos 1 sabor · Sin OC activa para reorden automatico · Inventario al 08-Mar-2026
+        Tiendas con 1 sabor bajo umbral (DDI &lt; 15) · Sin OC activa para reorden automatico · Inventario al 06-Abr-2026
       </p>
 
       {/* Table */}
@@ -67,10 +59,11 @@ export default function SlideAlerta340() {
           <thead>
             <tr className="bg-gray-50 border-b border-gray-200">
               <th className="text-left py-2.5 px-4 text-xs font-bold text-gray-600 w-[18%]">Tienda</th>
-              <th className="text-center py-2.5 px-3 text-xs font-bold text-gray-600 w-[20%]">Sal 340gr</th>
-              <th className="text-center py-2.5 px-3 text-xs font-bold text-gray-600 w-[20%]">Fuego 340gr</th>
-              <th className="text-center py-2.5 px-3 text-xs font-bold text-gray-600 w-[20%]">Jalapeno 340gr</th>
-              <th className="text-center py-2.5 px-3 text-xs font-bold text-gray-600 w-[12%]">Status</th>
+              <th className="text-center py-2.5 px-3 text-xs font-bold text-gray-600 w-[18%]">Sal 340gr</th>
+              <th className="text-center py-2.5 px-3 text-xs font-bold text-gray-600 w-[18%]">Fuego 340gr</th>
+              <th className="text-center py-2.5 px-3 text-xs font-bold text-gray-600 w-[18%]">Jalapeno 340gr</th>
+              <th className="text-center py-2.5 px-3 text-xs font-bold text-gray-600 w-[14%]">Sabor bajo</th>
+              <th className="text-center py-2.5 px-3 text-xs font-bold text-gray-600 w-[14%]">Status</th>
             </tr>
           </thead>
           <tbody>
@@ -103,6 +96,9 @@ export default function SlideAlerta340() {
                   </span>
                 </td>
                 <td className="py-2.5 px-3 text-center">
+                  <span className="text-[11px] font-semibold text-yellow-700">{t.sabor}</span>
+                </td>
+                <td className="py-2.5 px-3 text-center">
                   {statusBadge(t.status)}
                 </td>
               </tr>
@@ -113,29 +109,29 @@ export default function SlideAlerta340() {
 
       {/* Summary row */}
       <div className="grid grid-cols-3 gap-4 mb-4">
-        <div className="bg-red-50 rounded-lg p-3 text-center border border-red-200">
-          <p className="text-red-600 text-xs font-bold">Urgentes</p>
-          <p className="text-2xl font-bold text-gray-800">3</p>
-          <p className="text-[10px] text-gray-500">Anzures, Reforma, Eloy Cavazos</p>
+        <div className="bg-green-50 rounded-lg p-3 text-center border border-green-200">
+          <p className="text-green-600 text-xs font-bold">Urgentes</p>
+          <p className="text-2xl font-bold text-gray-800">0</p>
+          <p className="text-[10px] text-gray-500">Ninguna tienda con 2+ sabores bajo umbral</p>
         </div>
         <div className="bg-yellow-50 rounded-lg p-3 text-center border border-yellow-200">
           <p className="text-yellow-600 text-xs font-bold">Monitoreando</p>
-          <p className="text-2xl font-bold text-gray-800">1</p>
-          <p className="text-[10px] text-gray-500">Plaza del Bosque (Sal bajo)</p>
+          <p className="text-2xl font-bold text-gray-800">3</p>
+          <p className="text-[10px] text-gray-500">Reforma (Sal), Anzures (Jal), Fundadores (Sal)</p>
         </div>
         <div className="bg-green-50 rounded-lg p-3 text-center border border-green-200">
-          <p className="text-green-600 text-xs font-bold">Estables</p>
-          <p className="text-2xl font-bold text-gray-800">2</p>
-          <p className="text-[10px] text-gray-500">San Fernando, Huinala</p>
+          <p className="text-green-600 text-xs font-bold">Entregas detectadas</p>
+          <p className="text-2xl font-bold text-gray-800">Mar 24-27</p>
+          <p className="text-[10px] text-gray-500">Ultima entrega registrada</p>
         </div>
       </div>
 
       {/* CTA */}
       <div className="bg-purple-50 rounded-xl border border-purple-200 p-4 flex items-center gap-4">
-        <AlertTriangle className="w-6 h-6 text-purple-600 flex-shrink-0" />
+        <ShieldAlert className="w-6 h-6 text-purple-600 flex-shrink-0" />
         <div>
           <p className="text-sm font-bold text-purple-800">
-            Accion requerida: Registrar 3 SKUs de 340gr en sistema de OC HEB para activar reorden automatico
+            Accion pendiente: Registrar 3 SKUs de 340gr en sistema de OC HEB para activar reorden automatico
           </p>
           <p className="text-xs text-purple-600 mt-1">
             Papa Casera Sal 340gr · Papa Casera Fuego 340gr · Papa Casera Jalapeno 340gr

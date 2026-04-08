@@ -12,25 +12,25 @@ const acciones = [
     color: "purple",
   },
   {
-    accion: "Restock",
+    accion: "Monitoreando",
     pdq: "PDQ 340gr",
-    tiendas: "Reforma, Eloy Cavazos, Anzures",
-    nota: "2-3 sabores con DDI bajo 15 días — todos sin OC",
-    color: "red",
+    tiendas: "Reforma (Sal), Anzures (Jal), Fundadores (Sal)",
+    nota: "1 sabor bajo umbral cada una — sin restock necesario",
+    color: "yellow",
   },
   {
     accion: "Restock",
     pdq: "PDQ 45gr",
-    tiendas: "Las Brisas, Reforma, García, Cabezada",
-    nota: "2+ sabores bajo umbral — García sin OC, Cabezada parcial",
-    color: "red",
+    tiendas: "Aztlan",
+    nota: "3 sabores bajo umbral — OC CONFIRMADA",
+    color: "green",
   },
   {
-    accion: "Verificar anaquel",
+    accion: "Monitoreando",
     pdq: "PDQ 45gr",
-    tiendas: "Cat Monterrey",
-    nota: "Sin inventario ni ventas — verificar si tiene PDQ",
-    color: "orange",
+    tiendas: "Cabezada (Natural)",
+    nota: "1 sabor bajo umbral — sin OC para Natural",
+    color: "yellow",
   },
 ];
 
@@ -38,6 +38,8 @@ const colorMap: Record<string, { bg: string; text: string; rowBg: string }> = {
   red: { bg: "bg-red-100", text: "text-red-700", rowBg: "bg-red-50/40" },
   orange: { bg: "bg-orange-100", text: "text-orange-700", rowBg: "bg-orange-50/40" },
   purple: { bg: "bg-purple-100", text: "text-purple-700", rowBg: "bg-purple-50/40" },
+  yellow: { bg: "bg-yellow-100", text: "text-yellow-700", rowBg: "bg-yellow-50/40" },
+  green: { bg: "bg-green-100", text: "text-green-700", rowBg: "bg-green-50/40" },
 };
 
 export default function SlideRecomendaciones() {
@@ -48,14 +50,14 @@ export default function SlideRecomendaciones() {
         <h2 className="text-2xl font-bold text-gray-800">Recomendaciones</h2>
       </div>
       <p className="text-sm text-gray-500 mb-6">
-        Acciones basadas en análisis de inventario al 08-Mar-2026
+        Acciones basadas en analisis de inventario al 06-Abr-2026
       </p>
 
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
         <table className="w-full">
           <thead className="bg-gray-50">
             <tr>
-              <th className="text-left px-5 py-3 text-sm text-gray-600 font-semibold border-b border-gray-200 w-[18%]">Acción</th>
+              <th className="text-left px-5 py-3 text-sm text-gray-600 font-semibold border-b border-gray-200 w-[18%]">Accion</th>
               <th className="text-left px-5 py-3 text-sm text-gray-600 font-semibold border-b border-gray-200 w-[14%]">PDQ</th>
               <th className="text-left px-5 py-3 text-sm text-gray-600 font-semibold border-b border-gray-200 w-[34%]">Tiendas</th>
               <th className="text-left px-5 py-3 text-sm text-gray-600 font-semibold border-b border-gray-200 w-[34%]">Nota</th>
@@ -84,18 +86,18 @@ export default function SlideRecomendaciones() {
       <div className="mt-5 grid grid-cols-3 gap-4">
         <div className="bg-purple-50 rounded-lg p-3 text-center border border-purple-200">
           <p className="text-purple-500 text-xs font-bold mb-1">Registrar en OC</p>
-          <p className="text-gray-800 font-bold text-lg">1 acción</p>
+          <p className="text-gray-800 font-bold text-lg">1 accion</p>
           <p className="text-gray-400 text-[10px]">340gr sin sistema OC en HEB</p>
         </div>
-        <div className="bg-red-50 rounded-lg p-3 text-center border border-red-200">
-          <p className="text-red-500 text-xs font-bold mb-1">Restocks</p>
-          <p className="text-gray-800 font-bold text-lg">7 tiendas</p>
-          <p className="text-gray-400 text-[10px]">3 de 340gr + 4 de 45gr</p>
-        </div>
-        <div className="bg-orange-50 rounded-lg p-3 text-center border border-orange-200">
-          <p className="text-orange-500 text-xs font-bold mb-1">Verificar anaquel</p>
+        <div className="bg-green-50 rounded-lg p-3 text-center border border-green-200">
+          <p className="text-green-500 text-xs font-bold mb-1">Restocks</p>
           <p className="text-gray-800 font-bold text-lg">1 tienda</p>
-          <p className="text-gray-400 text-[10px]">Cat Monterrey — sin inventario ni ventas</p>
+          <p className="text-gray-400 text-[10px]">Aztlan 45gr — OC confirmada</p>
+        </div>
+        <div className="bg-yellow-50 rounded-lg p-3 text-center border border-yellow-200">
+          <p className="text-yellow-500 text-xs font-bold mb-1">Monitoreando</p>
+          <p className="text-gray-800 font-bold text-lg">4 tiendas</p>
+          <p className="text-gray-400 text-[10px]">3 de 340gr (1 sabor) + 1 de 45gr (Natural)</p>
         </div>
       </div>
     </SlideWrapper>

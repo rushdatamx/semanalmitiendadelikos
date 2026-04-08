@@ -4,21 +4,21 @@ import SlideWrapper from "./SlideWrapper";
 import { Award, TrendingUp } from "lucide-react";
 
 const productos = [
-  { nombre: "Teja Durito 20PZ", venta26: 1369478, venta25: 278030, pct: 49.2, color: "#F5A623" },
-  { nombre: "Papa Casera Natural 45gr", venta26: 339183, venta25: 167231, pct: 12.2, color: "#3B82F6" },
-  { nombre: "Papa Casera Jalapeño 45gr", venta26: 271170, venta25: 122087, pct: 9.7, color: "#3B82F6" },
-  { nombre: "Papa Casera Fuego 45gr", venta26: 263180, venta25: 95529, pct: 9.5, color: "#3B82F6" },
-  { nombre: "Papa Casera Sal 340gr", venta26: 111743, venta25: 0, pct: 4.0, color: "#F5A623" },
-  { nombre: "Cheeto 400gr", venta26: 108291, venta25: 54999, pct: 3.9, color: "#9CA3AF" },
-  { nombre: "Papa Deshidratada 190gr", venta26: 101755, venta25: 44359, pct: 3.7, color: "#9CA3AF" },
-  { nombre: "Papa Casera Jalapeño 340gr", venta26: 101087, venta25: 0, pct: 3.6, color: "#F5A623" },
-  { nombre: "Papa Casera Fuego 340gr", venta26: 88020, venta25: 0, pct: 3.2, color: "#F5A623" },
+  { nombre: "Teja Durito 20PZ", venta26: 1730082, venta25: 514905, pct: 48.4, color: "#F5A623" },
+  { nombre: "Papa Casera Natural 45gr", venta26: 430343, venta25: 0, pct: 12.0, color: "#3B82F6" },
+  { nombre: "Papa Casera Jalapeño 45gr", venta26: 342510, venta25: 0, pct: 9.6, color: "#3B82F6" },
+  { nombre: "Papa Casera Fuego 45gr", venta26: 333691, venta25: 0, pct: 9.3, color: "#3B82F6" },
+  { nombre: "Papa Casera Sal 340gr", venta26: 161528, venta25: 0, pct: 4.5, color: "#F5A623" },
+  { nombre: "Papa Casera Jalapeño 340gr", venta26: 149215, venta25: 0, pct: 4.2, color: "#F5A623" },
+  { nombre: "Papa Casera Fuego 340gr", venta26: 134521, venta25: 0, pct: 3.8, color: "#F5A623" },
+  { nombre: "Cheeto 400gr", venta26: 132708, venta25: 76711, pct: 3.7, color: "#9CA3AF" },
+  { nombre: "Papa Deshidratada 190gr", venta26: 130217, venta25: 64784, pct: 3.6, color: "#9CA3AF" },
 ];
 
 const maxVenta = productos[0].venta26;
-const total26 = 2784287;
-const total25 = 1096374;
-const totalVar = "+153.9%";
+const total26 = 3575742;
+const total25 = 1369886;
+const totalVar = "+161.0%";
 
 const fmt = (v: number) => {
   if (v >= 1_000_000) return `$${(v / 1_000_000).toFixed(1)}M`;
@@ -39,6 +39,10 @@ const tagMap: Record<string, { label: string; bg: string; text: string }> = {
 };
 
 export default function Slide9VentaProducto() {
+  // Compute PDQ 45gr total and growth
+  const pdq45Total26 = 430343 + 342510 + 333691;
+  const pdq340Total26 = 161528 + 149215 + 134521;
+
   return (
     <SlideWrapper className="bg-[#F5F5F5] p-10">
       <div className="flex items-center gap-3 mb-1">
@@ -46,16 +50,16 @@ export default function Slide9VentaProducto() {
         <h2 className="text-2xl font-bold text-gray-800">Venta por Producto</h2>
       </div>
       <p className="text-sm text-gray-500 mb-1">
-        P01 a P05 2026 · Venta sin IVA
+        P01 a P06 2026 · Venta sin IVA
       </p>
 
       {/* Comparativo general */}
       <div className="flex items-center gap-4 mb-3">
         <div className="flex items-center gap-2 bg-white rounded-lg px-3 py-1.5 border border-gray-200 shadow-sm">
           <TrendingUp className="w-4 h-4 text-[#27AE60]" />
-          <span className="text-xs text-gray-600">P01–P05 2026: <span className="font-bold text-gray-800">{fmt(total26)}</span></span>
+          <span className="text-xs text-gray-600">P01–P06 2026: <span className="font-bold text-gray-800">{fmt(total26)}</span></span>
           <span className="text-gray-300">|</span>
-          <span className="text-xs text-gray-400">P01–P05 2025: {fmt(total25)}</span>
+          <span className="text-xs text-gray-400">P01–P06 2025: {fmt(total25)}</span>
           <span className="text-xs font-bold text-[#27AE60]">{totalVar}</span>
         </div>
       </div>
@@ -109,18 +113,18 @@ export default function Slide9VentaProducto() {
       <div className="mt-3 grid grid-cols-3 gap-4">
         <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-3 text-center">
           <p className="text-[10px] text-gray-400 mb-1">Durito 20PZ</p>
-          <p className="text-xl font-bold text-[#F5A623]">49.2%</p>
-          <p className="text-[10px] text-gray-500">$1.4M · +393% vs 2025</p>
+          <p className="text-xl font-bold text-[#F5A623]">48.4%</p>
+          <p className="text-[10px] text-gray-500">$1.7M · +236% vs 2025</p>
         </div>
         <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-3 text-center">
           <p className="text-[10px] text-gray-400 mb-1">PDQ 45gr (3 sabores)</p>
-          <p className="text-xl font-bold text-blue-600">31.4%</p>
-          <p className="text-[10px] text-gray-500">$873K · +127% vs 2025</p>
+          <p className="text-xl font-bold text-blue-600">30.9%</p>
+          <p className="text-[10px] text-gray-500">{fmt(pdq45Total26)} · Nuevos en 2026</p>
         </div>
         <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-3 text-center">
           <p className="text-[10px] text-gray-400 mb-1">PDQ 340gr (3 sabores)</p>
-          <p className="text-xl font-bold text-[#B8860B]">10.8%</p>
-          <p className="text-[10px] text-gray-500">$301K · Nuevos en 2026</p>
+          <p className="text-xl font-bold text-[#B8860B]">12.5%</p>
+          <p className="text-[10px] text-gray-500">{fmt(pdq340Total26)} · Nuevos en 2026</p>
         </div>
       </div>
     </SlideWrapper>

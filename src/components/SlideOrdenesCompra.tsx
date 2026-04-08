@@ -13,6 +13,9 @@ const ocData = [
   { week: "20-Feb", uds: 315 },
   { week: "27-Feb", uds: 990 },
   { week: "06-Mar", uds: 1035 },
+  { week: "13-Mar", uds: 1395 },
+  { week: "20-Mar", uds: 1710 },
+  { week: "27-Mar", uds: 180 },
 ];
 
 const maxUds = Math.max(...ocData.map((d) => d.uds));
@@ -37,8 +40,8 @@ export default function SlideOrdenesCompra() {
                 OC Semanal — PDQ 45gr
               </h3>
             </div>
-            <span className="text-[10px] font-bold px-2 py-1 rounded-full bg-green-100 text-green-700">
-              +5% vs anterior
+            <span className="text-[10px] font-bold px-2 py-1 rounded-full bg-red-100 text-red-700">
+              -89% vs anterior
             </span>
           </div>
 
@@ -53,7 +56,7 @@ export default function SlideOrdenesCompra() {
                 >
                   <span
                     className={`text-[9px] font-bold mb-1 ${
-                      isLast ? "text-green-700" : "text-gray-500"
+                      isLast ? "text-red-700" : "text-gray-500"
                     }`}
                   >
                     {d.uds.toLocaleString()}
@@ -61,7 +64,7 @@ export default function SlideOrdenesCompra() {
                   <div
                     className={`w-full rounded-t-md transition-all ${
                       isLast
-                        ? "bg-gradient-to-t from-green-500 to-green-400"
+                        ? "bg-gradient-to-t from-red-500 to-red-400"
                         : "bg-gradient-to-t from-[#F5A623] to-[#F5C563]"
                     }`}
                     style={{ height: `${Math.max(heightPct, 3)}%` }}
@@ -89,27 +92,27 @@ export default function SlideOrdenesCompra() {
               </h3>
             </div>
             <p className="text-sm text-gray-700 mb-4 leading-relaxed">
-              Los 3 SKUs de 340gr no estan registrados en el sistema de OC de
-              HEB. Sin orden de compra activa, no hay reorden automatico.
+              Los 3 SKUs de 340gr siguen sin registro en OC de HEB.
+              Entregas detectadas Mar 24-27. Situacion estable pero sin reorden automatico.
             </p>
 
             <div className="space-y-3 mb-4">
               <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-red-500" />
+                <div className="w-2 h-2 rounded-full bg-yellow-500" />
                 <p className="text-sm text-gray-700">
-                  <span className="font-bold">3 tiendas</span> con &lt;15 DDI
+                  <span className="font-bold">0 restocks</span> necesarios (mejora vs semana anterior)
+                </p>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 rounded-full bg-yellow-500" />
+                <p className="text-sm text-gray-700">
+                  <span className="font-bold">3 tiendas</span> con 1 sabor bajo umbral
                 </p>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full bg-red-500" />
                 <p className="text-sm text-gray-700">
                   <span className="font-bold">3 SKUs</span> sin registro OC
-                </p>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-red-500" />
-                <p className="text-sm text-gray-700">
-                  Riesgo de <span className="font-bold">quiebre de stock</span>
                 </p>
               </div>
             </div>
@@ -129,11 +132,11 @@ export default function SlideOrdenesCompra() {
               <div>
                 <p className="text-xs font-bold text-green-700">PDQ 45gr en OC</p>
                 <p className="text-[10px] text-green-600 mt-0.5">
-                  Ultima semana: 1,035 uds
+                  Ultima semana: 180 uds (27-Mar)
                 </p>
               </div>
               <div className="text-right">
-                <p className="text-lg font-bold text-green-700">9 semanas</p>
+                <p className="text-lg font-bold text-green-700">12 semanas</p>
                 <p className="text-[10px] text-green-600">con OC activa</p>
               </div>
             </div>

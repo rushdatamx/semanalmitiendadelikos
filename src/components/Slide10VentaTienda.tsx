@@ -4,24 +4,24 @@ import SlideWrapper from "./SlideWrapper";
 import { Store, TrendingUp } from "lucide-react";
 
 const tiendas = [
-  { nombre: "MT MAT Las Brisas", venta26: 204201, venta25: 63994, pct: 7.3 },
-  { nombre: "MT REY Bugambilias", venta26: 190343, venta25: 38605, pct: 6.8 },
-  { nombre: "MT REY Periferico", venta26: 169866, venta25: 68860, pct: 6.1 },
-  { nombre: "MT MTY Zuazua", venta26: 165232, venta25: 68511, pct: 5.9 },
-  { nombre: "MT REY San Fernando", venta26: 156665, venta25: 61416, pct: 5.6 },
-  { nombre: "MT NVO Reforma", venta26: 145004, venta25: 58533, pct: 5.2 },
-  { nombre: "MT NVO Revolucion", venta26: 144457, venta25: 56508, pct: 5.2 },
-  { nombre: "MT REY Rio Bravo", venta26: 130980, venta25: 49359, pct: 4.7 },
-  { nombre: "MT MTY Ciudadela", venta26: 117777, venta25: 51901, pct: 4.2 },
-  { nombre: "MT MTY Garcia", venta26: 116971, venta25: 47087, pct: 4.2 },
-  { nombre: "MT MTY Eloy Cavazos", venta26: 113570, venta25: 22484, pct: 4.1 },
-  { nombre: "MT MTY Huinala", venta26: 113339, venta25: 64798, pct: 4.1 },
-  { nombre: "MT MTY Anzures", venta26: 99268, venta25: 0, pct: 3.6 },
+  { nombre: "MT MAT Las Brisas", venta26: 261600, venta25: 78090, pct: 7.3 },
+  { nombre: "MT REY Bugambilias", venta26: 243853, venta25: 76442, pct: 6.8 },
+  { nombre: "MT REY Periferico", venta26: 219191, venta25: 84958, pct: 6.1 },
+  { nombre: "MT MTY Zuazua", venta26: 201322, venta25: 87152, pct: 5.6 },
+  { nombre: "MT REY San Fernando", venta26: 188990, venta25: 78746, pct: 5.3 },
+  { nombre: "MT NVO Reforma", venta26: 185439, venta25: 68427, pct: 5.2 },
+  { nombre: "MT NVO Revolucion", venta26: 179577, venta25: 65539, pct: 5.0 },
+  { nombre: "MT MTY Garcia", venta26: 157505, venta25: 63510, pct: 4.4 },
+  { nombre: "MT REY Rio Bravo", venta26: 156861, venta25: 60564, pct: 4.4 },
+  { nombre: "MT MTY Ciudadela", venta26: 150999, venta25: 60887, pct: 4.2 },
+  { nombre: "MT MTY Eloy Cavazos", venta26: 145365, venta25: 36071, pct: 4.1 },
+  { nombre: "MT MTY Huinala", venta26: 139277, venta25: 75694, pct: 3.9 },
+  { nombre: "MT MTY Anzures", venta26: 131090, venta25: 0, pct: 3.7 },
 ];
 
 const maxVenta = tiendas[0].venta26;
-const total26 = 2784287;
-const total25 = 1096374;
+const total26 = 3575742;
+const total25 = 1369886;
 
 const fmt = (v: number) => {
   if (v >= 1_000_000) return `$${(v / 1_000_000).toFixed(1)}M`;
@@ -46,17 +46,17 @@ export default function Slide10VentaTienda() {
         <h2 className="text-2xl font-bold text-gray-800">Venta por Tienda</h2>
       </div>
       <p className="text-sm text-gray-500 mb-1">
-        Top 13 de 25 tiendas · P01 a P05 2026 · Venta sin IVA
+        Top 13 de 26 tiendas · P01 a P06 2026 · Venta sin IVA
       </p>
 
       {/* Comparativo general */}
       <div className="flex items-center gap-4 mb-3">
         <div className="flex items-center gap-2 bg-white rounded-lg px-3 py-1.5 border border-gray-200 shadow-sm">
           <TrendingUp className="w-4 h-4 text-[#27AE60]" />
-          <span className="text-xs text-gray-600">P01–P05 2026: <span className="font-bold text-gray-800">{fmt(total26)}</span></span>
+          <span className="text-xs text-gray-600">P01–P06 2026: <span className="font-bold text-gray-800">{fmt(total26)}</span></span>
           <span className="text-gray-300">|</span>
-          <span className="text-xs text-gray-400">P01–P05 2025: {fmt(total25)}</span>
-          <span className="text-xs font-bold text-[#27AE60]">+153.9%</span>
+          <span className="text-xs text-gray-400">P01–P06 2025: {fmt(total25)}</span>
+          <span className="text-xs font-bold text-[#27AE60]">+161.0%</span>
         </div>
       </div>
 
@@ -141,16 +141,16 @@ export default function Slide10VentaTienda() {
         <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-3 text-center">
           <p className="text-[10px] text-gray-400 mb-1">Top 5 tiendas</p>
           <p className="text-xl font-bold text-[#F5A623]">{top5Pct.toFixed(1)}%</p>
-          <p className="text-[10px] text-gray-500">{fmt(top5Total)} de $2.8M</p>
+          <p className="text-[10px] text-gray-500">{fmt(top5Total)} de $3.6M</p>
         </div>
         <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-3 text-center">
           <p className="text-[10px] text-gray-400 mb-1">Crecimiento total</p>
-          <p className="text-xl font-bold text-[#27AE60]">+153.9%</p>
+          <p className="text-xl font-bold text-[#27AE60]">+161.0%</p>
           <p className="text-[10px] text-gray-500">{fmt(total25)} → {fmt(total26)}</p>
         </div>
         <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-3 text-center">
           <p className="text-[10px] text-gray-400 mb-1">Todas crecen</p>
-          <p className="text-xl font-bold text-[#27AE60]">25 / 25</p>
+          <p className="text-xl font-bold text-[#27AE60]">26 / 26</p>
           <p className="text-[10px] text-gray-500">100% de tiendas con crecimiento</p>
         </div>
       </div>

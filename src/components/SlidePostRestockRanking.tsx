@@ -1,134 +1,152 @@
 "use client";
 
 import SlideWrapper from "./SlideWrapper";
-import { Trophy } from "lucide-react";
+import { Store, ArrowUpRight } from "lucide-react";
 
-const topTiendas = [
-  { rank: 1, tienda: "Reforma", uds340: 116, uds45: 879, total: 995 },
-  { rank: 2, tienda: "Fundadores", uds340: 127, uds45: 605, total: 732 },
-  { rank: 3, tienda: "Cabezada", uds340: 58, uds45: 674, total: 732 },
-  { rank: 4, tienda: "Garcia", uds340: 136, uds45: 582, total: 718 },
-  { rank: 5, tienda: "Revolucion", uds340: 109, uds45: 552, total: 661 },
-  { rank: 6, tienda: "Zuazua", uds340: 95, uds45: 542, total: 637 },
-  { rank: 7, tienda: "Ciudadela", uds340: 112, uds45: 503, total: 615 },
-  { rank: 8, tienda: "Satelite", uds340: 37, uds45: 493, total: 530 },
-  { rank: 9, tienda: "Anzures", uds340: 98, uds45: 328, total: 426 },
-  { rank: 10, tienda: "Buena Vista", uds340: 100, uds45: 394, total: 494 },
+// Tiendas grouped by how much they consumed post-restock (combined 340+45)
+// >25% consumed = high demand, 10-25% = moderate, <10% = low (need promotoria)
+const highDemand = [
+  { tienda: "Reforma", pct: 47.5, note: "Top en 340gr" },
+  { tienda: "Anzures", pct: 38.3, note: "" },
+  { tienda: "Revolucion", pct: 35.5, note: "" },
+  { tienda: "Garcia", pct: 35.3, note: "" },
+  { tienda: "Fundadores", pct: 31.6, note: "" },
+  { tienda: "Ciudadela", pct: 29.6, note: "" },
+  { tienda: "Eloy Cavazos", pct: 26.0, note: "" },
+  { tienda: "Zuazua", pct: 25.2, note: "" },
 ];
 
-const total340 = 1468;
-const total45 = 9977;
-const totalCombined = total340 + total45;
-const maxTotal = topTiendas[0].total;
+const moderate = [
+  { tienda: "Cabezada", pct: 17.5 },
+  { tienda: "Buena Vista", pct: 16.5 },
+  { tienda: "Huinala", pct: 16.1 },
+  { tienda: "Margaritas", pct: 14.5 },
+  { tienda: "Periferico", pct: 14.1 },
+  { tienda: "Aeropuerto", pct: 12.9 },
+  { tienda: "Lincoln", pct: 11.1 },
+  { tienda: "Rio Bravo", pct: 10.6 },
+  { tienda: "San Fernando", pct: 10.6 },
+];
 
-const fmtN = (v: number) => v.toLocaleString("es-MX");
-
-const medalColors = ["#F5A623", "#9CA3AF", "#CD7F32"];
+const low = [
+  { tienda: "Las Brisas", pct: 9.4 },
+  { tienda: "San Roque", pct: 8.8 },
+  { tienda: "Plaza del Bosque", pct: 6.6 },
+  { tienda: "Satelite", pct: 5.4 },
+  { tienda: "Bugambilias", pct: 1.4 },
+  { tienda: "Metroplex", pct: 0.0 },
+];
 
 export default function SlidePostRestockRanking() {
   return (
     <SlideWrapper className="bg-[#F5F5F5] p-10">
       <div className="flex items-center gap-3 mb-1">
-        <Trophy className="w-7 h-7 text-[#F5A623]" />
+        <Store className="w-7 h-7 text-gray-700" />
         <h2 className="text-2xl font-bold text-gray-800">
-          Top 10 Tiendas por Unidades Vendidas
+          La demanda existe en la mayoria de tiendas
         </h2>
       </div>
-      <p className="text-sm text-gray-500 mb-4">
-        Post-restock (25-Mar al 06-Abr) &middot; 12 dias &middot; Unidades consumidas
+      <p className="text-sm text-gray-500 mb-5">
+        % de inventario 340gr consumido en 12 dias post-restock &middot; Con mas stock, estas tiendas venden mas
       </p>
 
-      <div className="grid grid-cols-[1fr_320px] gap-5 flex-1">
-        {/* Left: ranking bars */}
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-5 flex flex-col">
-          <div className="space-y-2.5 flex-1">
-            {topTiendas.map((t) => {
-              const barPct = (t.total / maxTotal) * 100;
-              const bar340Pct = (t.uds340 / t.total) * 100;
-              const isTop3 = t.rank <= 3;
-
-              return (
-                <div key={t.rank} className="flex items-center gap-3">
-                  <span className={`w-6 text-right text-sm font-bold ${isTop3 ? "text-[#F5A623]" : "text-gray-400"}`}>
-                    {isTop3 ? (
-                      <span style={{ color: medalColors[t.rank - 1] }}>#{t.rank}</span>
-                    ) : (
-                      `#${t.rank}`
-                    )}
-                  </span>
-                  <span className="w-[100px] text-xs font-medium text-gray-800 truncate">
-                    {t.tienda}
-                  </span>
-                  <div className="flex-1">
-                    <div className="w-full bg-gray-100 rounded-full h-5 overflow-hidden relative" style={{ width: `${barPct}%`, minWidth: "60px" }}>
-                      {/* 340gr portion */}
-                      <div
-                        className="absolute left-0 top-0 h-full rounded-l-full"
-                        style={{ width: `${bar340Pct}%`, backgroundColor: "#F5A623" }}
-                      />
-                      {/* 45gr portion */}
-                      <div
-                        className="absolute top-0 h-full rounded-r-full"
-                        style={{ left: `${bar340Pct}%`, width: `${100 - bar340Pct}%`, backgroundColor: "#3B82F6" }}
-                      />
-                    </div>
-                  </div>
-                  <span className="text-sm font-bold text-gray-800 w-[55px] text-right">
-                    {fmtN(t.total)}
-                  </span>
-                </div>
-              );
-            })}
+      <div className="grid grid-cols-3 gap-4 flex-1">
+        {/* HIGH DEMAND */}
+        <div className="flex flex-col">
+          <div className="bg-green-600 text-white rounded-t-xl px-4 py-3 text-center">
+            <p className="text-2xl font-bold">{highDemand.length}</p>
+            <p className="text-xs font-medium opacity-90">tiendas vendiendo fuerte</p>
+            <p className="text-[10px] opacity-70 mt-0.5">&gt;25% consumido en 12 dias</p>
           </div>
-          <div className="flex items-center gap-4 mt-4 pt-3 border-t border-gray-100">
-            <div className="flex items-center gap-1.5">
-              <div className="w-3 h-3 rounded bg-[#F5A623]" />
-              <span className="text-[11px] text-gray-500">340gr</span>
+          <div className="bg-white rounded-b-xl border border-gray-200 border-t-0 flex-1 p-3">
+            <div className="space-y-1.5">
+              {highDemand.map((t) => (
+                <div key={t.tienda} className="flex items-center justify-between">
+                  <div className="flex items-center gap-1.5">
+                    <ArrowUpRight className="w-3 h-3 text-green-500" />
+                    <span className="text-xs text-gray-700">{t.tienda}</span>
+                  </div>
+                  <span className="text-xs font-bold text-green-600">{t.pct}%</span>
+                </div>
+              ))}
             </div>
-            <div className="flex items-center gap-1.5">
-              <div className="w-3 h-3 rounded bg-[#3B82F6]" />
-              <span className="text-[11px] text-gray-500">45gr</span>
+            <div className="mt-3 pt-3 border-t border-gray-100 text-center">
+              <p className="text-[10px] text-green-600 font-semibold">
+                Estas tiendas necesitaran restock pronto
+              </p>
             </div>
           </div>
         </div>
 
-        {/* Right: summary cards */}
-        <div className="flex flex-col gap-4">
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-5 text-center flex-1 flex flex-col justify-center">
-            <p className="text-[11px] text-gray-400 mb-1">Total vendido (todas las tiendas)</p>
-            <p className="text-3xl font-bold text-gray-800">{fmtN(totalCombined)}</p>
-            <p className="text-xs text-gray-400 mt-1">unidades en 12 dias</p>
+        {/* MODERATE */}
+        <div className="flex flex-col">
+          <div className="bg-yellow-500 text-white rounded-t-xl px-4 py-3 text-center">
+            <p className="text-2xl font-bold">{moderate.length}</p>
+            <p className="text-xs font-medium opacity-90">tiendas con venta estable</p>
+            <p className="text-[10px] opacity-70 mt-0.5">10-25% consumido</p>
           </div>
-
-          <div className="bg-orange-50 rounded-xl border border-orange-200 p-4 text-center flex-1 flex flex-col justify-center">
-            <div className="flex items-center justify-center gap-2 mb-1">
-              <div className="w-3 h-3 rounded-full bg-[#F5A623]" />
-              <p className="text-[11px] text-orange-500">PDQ 340gr</p>
+          <div className="bg-white rounded-b-xl border border-gray-200 border-t-0 flex-1 p-3">
+            <div className="space-y-1.5">
+              {moderate.map((t) => (
+                <div key={t.tienda} className="flex items-center justify-between">
+                  <span className="text-xs text-gray-700">{t.tienda}</span>
+                  <span className="text-xs font-semibold text-yellow-600">{t.pct}%</span>
+                </div>
+              ))}
             </div>
-            <p className="text-2xl font-bold text-[#F5A623]">{fmtN(total340)}</p>
-            <p className="text-xs text-orange-400 mt-0.5">uds · 22 tiendas</p>
-          </div>
-
-          <div className="bg-blue-50 rounded-xl border border-blue-200 p-4 text-center flex-1 flex flex-col justify-center">
-            <div className="flex items-center justify-center gap-2 mb-1">
-              <div className="w-3 h-3 rounded-full bg-[#3B82F6]" />
-              <p className="text-[11px] text-blue-500">PDQ 45gr</p>
+            <div className="mt-3 pt-3 border-t border-gray-100 text-center">
+              <p className="text-[10px] text-yellow-600 font-semibold">
+                Buen ritmo — stock para 2-3 meses
+              </p>
             </div>
-            <p className="text-2xl font-bold text-[#3B82F6]">{fmtN(total45)}</p>
-            <p className="text-xs text-blue-400 mt-0.5">uds · 24 tiendas</p>
           </div>
+        </div>
 
-          <div className="bg-green-50 rounded-xl border border-green-200 p-4 text-center">
-            <p className="text-[10px] text-green-500 mb-0.5">Cobertura</p>
-            <p className="text-lg font-bold text-green-700">100%</p>
-            <p className="text-[10px] text-green-500">Todas las tiendas con stock</p>
+        {/* LOW / NEEDS ATTENTION */}
+        <div className="flex flex-col">
+          <div className="bg-red-500 text-white rounded-t-xl px-4 py-3 text-center">
+            <p className="text-2xl font-bold">{low.length}</p>
+            <p className="text-xs font-medium opacity-90">tiendas con baja rotacion</p>
+            <p className="text-[10px] opacity-70 mt-0.5">&lt;10% consumido</p>
+          </div>
+          <div className="bg-white rounded-b-xl border border-gray-200 border-t-0 flex-1 p-3">
+            <div className="space-y-1.5">
+              {low.map((t) => (
+                <div key={t.tienda} className="flex items-center justify-between">
+                  <span className="text-xs text-gray-700">{t.tienda}</span>
+                  <span className="text-xs font-semibold text-red-500">{t.pct}%</span>
+                </div>
+              ))}
+            </div>
+            <div className="mt-3 pt-3 border-t border-gray-100 text-center">
+              <p className="text-[10px] text-red-500 font-semibold">
+                Revisar exhibicion con promotoria
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
-      <p className="text-[10px] text-gray-400 mt-2 text-center">
-        Unidades = consumo medido de inventario diario &middot; Excluye Cat Monterrey (CEDIS) y tienda 9115 (sin catalogo)
-      </p>
+      {/* Bottom insight */}
+      <div className="mt-4 bg-white rounded-xl border border-gray-200 shadow-sm px-6 py-3 flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <div className="bg-green-100 rounded-full p-2">
+            <ArrowUpRight className="w-5 h-5 text-green-600" />
+          </div>
+          <div>
+            <p className="text-sm font-bold text-gray-800">
+              17 de 23 tiendas (74%) vendiendo a buen ritmo
+            </p>
+            <p className="text-xs text-gray-500">
+              La demanda esta confirmada — con mas producto, mas venta
+            </p>
+          </div>
+        </div>
+        <div className="text-right">
+          <p className="text-2xl font-bold text-green-600">74%</p>
+          <p className="text-[10px] text-gray-400">tiendas activas</p>
+        </div>
+      </div>
     </SlideWrapper>
   );
 }

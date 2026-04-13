@@ -16,6 +16,8 @@ const ocData = [
   { week: "13-Mar", uds: 1395 },
   { week: "20-Mar", uds: 1710 },
   { week: "27-Mar", uds: 180 },
+  { week: "03-Abr", uds: 315 },
+  { week: "10-Abr", uds: 540 },
 ];
 
 const maxUds = Math.max(...ocData.map((d) => d.uds));
@@ -40,12 +42,12 @@ export default function SlideOrdenesCompra() {
                 OC Semanal — PDQ 45gr
               </h3>
             </div>
-            <span className="text-[10px] font-bold px-2 py-1 rounded-full bg-red-100 text-red-700">
-              -89% vs anterior
+            <span className="text-[10px] font-bold px-2 py-1 rounded-full bg-green-100 text-green-700">
+              +71% vs anterior
             </span>
           </div>
 
-          <div className="flex items-end gap-2 flex-1 min-h-0 pb-1">
+          <div className="flex items-end gap-1.5 flex-1 min-h-0 pb-1">
             {ocData.map((d, i) => {
               const heightPct = (d.uds / maxUds) * 100;
               const isLast = i === ocData.length - 1;
@@ -55,8 +57,8 @@ export default function SlideOrdenesCompra() {
                   className="flex-1 flex flex-col items-center justify-end h-full"
                 >
                   <span
-                    className={`text-[9px] font-bold mb-1 ${
-                      isLast ? "text-red-700" : "text-gray-500"
+                    className={`text-[8px] font-bold mb-1 ${
+                      isLast ? "text-green-700" : "text-gray-500"
                     }`}
                   >
                     {d.uds.toLocaleString()}
@@ -64,12 +66,12 @@ export default function SlideOrdenesCompra() {
                   <div
                     className={`w-full rounded-t-md transition-all ${
                       isLast
-                        ? "bg-gradient-to-t from-red-500 to-red-400"
+                        ? "bg-gradient-to-t from-green-500 to-green-400"
                         : "bg-gradient-to-t from-[#F5A623] to-[#F5C563]"
                     }`}
                     style={{ height: `${Math.max(heightPct, 3)}%` }}
                   />
-                  <span className="text-[8px] text-gray-400 mt-1 leading-tight text-center">
+                  <span className="text-[7px] text-gray-400 mt-1 leading-tight text-center">
                     {d.week}
                   </span>
                 </div>
@@ -93,20 +95,20 @@ export default function SlideOrdenesCompra() {
             </div>
             <p className="text-sm text-gray-700 mb-4 leading-relaxed">
               Los 3 SKUs de 340gr siguen sin registro en OC de HEB.
-              Entregas detectadas Mar 24-27. Situacion estable pero sin reorden automatico.
+              2 tiendas agotadas (Valle Sta Maria, Aztlan). Requiere envio manual.
             </p>
 
             <div className="space-y-3 mb-4">
               <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-yellow-500" />
+                <div className="w-2 h-2 rounded-full bg-red-500" />
                 <p className="text-sm text-gray-700">
-                  <span className="font-bold">0 restocks</span> necesarios (mejora vs semana anterior)
+                  <span className="font-bold">2 tiendas agotadas</span> (Valle Sta Maria, Aztlan)
                 </p>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full bg-yellow-500" />
                 <p className="text-sm text-gray-700">
-                  <span className="font-bold">3 tiendas</span> con 1 sabor bajo umbral
+                  <span className="font-bold">2 tiendas</span> con 1 sabor bajo umbral
                 </p>
               </div>
               <div className="flex items-center gap-3">
@@ -119,7 +121,7 @@ export default function SlideOrdenesCompra() {
 
             <div className="mt-auto bg-red-100 rounded-lg p-3 border border-red-200">
               <p className="text-xs font-bold text-red-700 text-center">
-                Accion: Registrar en OC HEB
+                Accion: Envio manual + Registrar en OC HEB
               </p>
               <p className="text-[10px] text-red-600 text-center mt-1">
                 Sal 340gr · Fuego 340gr · Jalapeno 340gr
@@ -132,11 +134,11 @@ export default function SlideOrdenesCompra() {
               <div>
                 <p className="text-xs font-bold text-green-700">PDQ 45gr en OC</p>
                 <p className="text-[10px] text-green-600 mt-0.5">
-                  Ultima semana: 180 uds (27-Mar)
+                  Ultima semana: 540 uds (10-Abr) +71%
                 </p>
               </div>
               <div className="text-right">
-                <p className="text-lg font-bold text-green-700">12 semanas</p>
+                <p className="text-lg font-bold text-green-700">14 semanas</p>
                 <p className="text-[10px] text-green-600">con OC activa</p>
               </div>
             </div>

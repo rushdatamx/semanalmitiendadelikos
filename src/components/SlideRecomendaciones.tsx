@@ -5,6 +5,13 @@ import { ClipboardList } from "lucide-react";
 
 const acciones = [
   {
+    accion: "Envio Manual",
+    pdq: "PDQ 340gr",
+    tiendas: "Valle Sta Maria, Aztlan",
+    nota: "2 tiendas agotadas — enviar 240 pzs (80/sabor) a cada una",
+    color: "red",
+  },
+  {
     accion: "Registrar en OC",
     pdq: "PDQ 340gr",
     tiendas: "Todas",
@@ -12,24 +19,24 @@ const acciones = [
     color: "purple",
   },
   {
-    accion: "Monitoreando",
-    pdq: "PDQ 340gr",
-    tiendas: "Reforma (Sal), Anzures (Jal), Fundadores (Sal)",
-    nota: "1 sabor bajo umbral cada una — sin restock necesario",
-    color: "yellow",
+    accion: "Solicitar OC",
+    pdq: "PDQ 45gr",
+    tiendas: "Reforma",
+    nota: "3 sabores bajo umbral — sin OC, solicitar pedido adicional (1,260 pzs)",
+    color: "red",
   },
   {
     accion: "Restock",
     pdq: "PDQ 45gr",
     tiendas: "Aztlan",
-    nota: "3 sabores bajo umbral — OC CONFIRMADA",
+    nota: "3 sabores bajo umbral — OC CONFIRMADA (10-Abr)",
     color: "green",
   },
   {
     accion: "Monitoreando",
-    pdq: "PDQ 45gr",
-    tiendas: "Cabezada (Natural)",
-    nota: "1 sabor bajo umbral — sin OC para Natural",
+    pdq: "PDQ 340gr",
+    tiendas: "Reforma (Sal 6.8d), Fundadores (Sal 13.5d)",
+    nota: "1 sabor bajo umbral — proxima semana podrian necesitar restock",
     color: "yellow",
   },
 ];
@@ -50,17 +57,17 @@ export default function SlideRecomendaciones() {
         <h2 className="text-2xl font-bold text-gray-800">Recomendaciones</h2>
       </div>
       <p className="text-sm text-gray-500 mb-6">
-        Acciones basadas en analisis de inventario al 06-Abr-2026
+        Acciones basadas en analisis de inventario al 12-Abr-2026
       </p>
 
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
         <table className="w-full">
           <thead className="bg-gray-50">
             <tr>
-              <th className="text-left px-5 py-3 text-sm text-gray-600 font-semibold border-b border-gray-200 w-[18%]">Accion</th>
-              <th className="text-left px-5 py-3 text-sm text-gray-600 font-semibold border-b border-gray-200 w-[14%]">PDQ</th>
+              <th className="text-left px-5 py-3 text-sm text-gray-600 font-semibold border-b border-gray-200 w-[16%]">Accion</th>
+              <th className="text-left px-5 py-3 text-sm text-gray-600 font-semibold border-b border-gray-200 w-[12%]">PDQ</th>
               <th className="text-left px-5 py-3 text-sm text-gray-600 font-semibold border-b border-gray-200 w-[34%]">Tiendas</th>
-              <th className="text-left px-5 py-3 text-sm text-gray-600 font-semibold border-b border-gray-200 w-[34%]">Nota</th>
+              <th className="text-left px-5 py-3 text-sm text-gray-600 font-semibold border-b border-gray-200 w-[38%]">Nota</th>
             </tr>
           </thead>
           <tbody>
@@ -68,14 +75,14 @@ export default function SlideRecomendaciones() {
               const c = colorMap[a.color];
               return (
                 <tr key={i} className={`border-b border-gray-100 last:border-0 ${c.rowBg}`}>
-                  <td className="px-5 py-4">
+                  <td className="px-5 py-3">
                     <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold ${c.bg} ${c.text}`}>
                       {a.accion}
                     </span>
                   </td>
-                  <td className="px-5 py-4 text-sm font-semibold text-gray-800">{a.pdq}</td>
-                  <td className="px-5 py-4 text-sm text-gray-700">{a.tiendas}</td>
-                  <td className="px-5 py-4 text-xs text-gray-500">{a.nota}</td>
+                  <td className="px-5 py-3 text-sm font-semibold text-gray-800">{a.pdq}</td>
+                  <td className="px-5 py-3 text-sm text-gray-700">{a.tiendas}</td>
+                  <td className="px-5 py-3 text-xs text-gray-500">{a.nota}</td>
                 </tr>
               );
             })}
@@ -84,20 +91,20 @@ export default function SlideRecomendaciones() {
       </div>
 
       <div className="mt-5 grid grid-cols-3 gap-4">
-        <div className="bg-purple-50 rounded-lg p-3 text-center border border-purple-200">
-          <p className="text-purple-500 text-xs font-bold mb-1">Registrar en OC</p>
-          <p className="text-gray-800 font-bold text-lg">1 accion</p>
-          <p className="text-gray-400 text-[10px]">340gr sin sistema OC en HEB</p>
+        <div className="bg-red-50 rounded-lg p-3 text-center border border-red-200">
+          <p className="text-red-500 text-xs font-bold mb-1">Urgente</p>
+          <p className="text-gray-800 font-bold text-lg">3 acciones</p>
+          <p className="text-gray-400 text-[10px]">2 envios manual 340gr + 1 OC 45gr Reforma</p>
         </div>
         <div className="bg-green-50 rounded-lg p-3 text-center border border-green-200">
-          <p className="text-green-500 text-xs font-bold mb-1">Restocks</p>
+          <p className="text-green-500 text-xs font-bold mb-1">Confirmado</p>
           <p className="text-gray-800 font-bold text-lg">1 tienda</p>
-          <p className="text-gray-400 text-[10px]">Aztlan 45gr — OC confirmada</p>
+          <p className="text-gray-400 text-[10px]">Aztlan 45gr — OC del 10-Abr</p>
         </div>
         <div className="bg-yellow-50 rounded-lg p-3 text-center border border-yellow-200">
           <p className="text-yellow-500 text-xs font-bold mb-1">Monitoreando</p>
-          <p className="text-gray-800 font-bold text-lg">4 tiendas</p>
-          <p className="text-gray-400 text-[10px]">3 de 340gr (1 sabor) + 1 de 45gr (Natural)</p>
+          <p className="text-gray-800 font-bold text-lg">2 tiendas</p>
+          <p className="text-gray-400 text-[10px]">Reforma y Fundadores (Sal 340gr bajando)</p>
         </div>
       </div>
     </SlideWrapper>

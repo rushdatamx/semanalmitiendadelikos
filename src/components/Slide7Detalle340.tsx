@@ -15,36 +15,38 @@ interface Row {
 const UMBRAL = 15;
 
 const data: Row[] = [
-  { tienda: "MT NVO Reforma", salDos: 7.6, fuegoDos: 18.7, jalDos: 20.5, salInv: 30, fuegoInv: 49, jalInv: 49 },
-  { tienda: "MT MTY Anzures", salDos: 16.9, fuegoDos: 51.2, jalDos: 12.4, salInv: 52, fuegoInv: 67, jalInv: 39 },
-  { tienda: "MT SAL Fundadores", salDos: 14.4, fuegoDos: 52.4, jalDos: 19.2, salInv: 59, fuegoInv: 144, jalInv: 72 },
-  { tienda: "MT NVO Revolucion", salDos: 18.3, fuegoDos: 16.3, jalDos: 38.0, salInv: 61, fuegoInv: 61, jalInv: 76 },
-  { tienda: "MT MTY Garcia", salDos: 18.0, fuegoDos: 27.3, jalDos: 26.8, salInv: 68, fuegoInv: 86, jalInv: 95 },
-  { tienda: "MT MTY Ciudadela", salDos: 35.6, fuegoDos: 35.8, jalDos: 23.6, salInv: 85, fuegoInv: 102, jalInv: 80 },
-  { tienda: "MT REY Periferico", salDos: 25.5, fuegoDos: 69.1, jalDos: 34.8, salInv: 68, fuegoInv: 121, jalInv: 84 },
-  { tienda: "MT MTY Zuazua", salDos: 25.7, fuegoDos: 58.8, jalDos: 38.6, salInv: 77, fuegoInv: 113, jalInv: 92 },
-  { tienda: "MT MTY Eloy Cavazos", salDos: 25.6, fuegoDos: 42.8, jalDos: 47.7, salInv: 57, fuegoInv: 79, jalInv: 66 },
-  { tienda: "MT MTY Cabezada", salDos: 37.0, fuegoDos: 63.6, jalDos: 106.0, salInv: 74, fuegoInv: 93, jalInv: 106 },
-  { tienda: "MT MTY Huinala", salDos: 95.7, fuegoDos: 48.4, jalDos: 82.0, salInv: 81, fuegoInv: 93, jalInv: 82 },
-  { tienda: "MT MTY Margaritas", salDos: 69.3, fuegoDos: 112.1, jalDos: 56.1, salInv: 96, fuegoInv: 138, jalInv: 95 },
-  { tienda: "MT REY San Fernando", salDos: 68.6, fuegoDos: 150.9, jalDos: 112.0, salInv: 80, fuegoInv: 88, jalInv: 84 },
-  { tienda: "MT MTY Buena Vista", salDos: 60.0, fuegoDos: 84.0, jalDos: 46.8, salInv: 165, fuegoInv: 182, jalInv: 160 },
-  { tienda: "MT REY Aeropuerto", salDos: 56.6, fuegoDos: 94.7, jalDos: 108.0, salInv: 66, fuegoInv: 71, jalInv: 72 },
-  { tienda: "MT REY Rio Bravo", salDos: 109.0, fuegoDos: 83.8, jalDos: 152.8, salInv: 109, fuegoInv: 129, jalInv: 141 },
-  { tienda: "MT MTY San Roque", salDos: 126.1, fuegoDos: 137.8, jalDos: 139.1, salInv: 97, fuegoInv: 106, jalInv: 107 },
-  { tienda: "MT MTY Lincoln", salDos: 1040.0, fuegoDos: 55.7, jalDos: 114.1, salInv: 80, fuegoInv: 90, jalInv: 79 },
-  { tienda: "MT REY Bugambilias", salDos: 710.7, fuegoDos: 1254.5, jalDos: 875.3, salInv: 164, fuegoInv: 193, jalInv: 202 },
-  { tienda: "MT MTY Plaza del Bosque", salDos: 1053.0, fuegoDos: 193.4, jalDos: 102.9, salInv: 81, fuegoInv: 119, jalInv: 95 },
-  { tienda: "MT SAL Satelite", salDos: 165.8, fuegoDos: 240.5, jalDos: 312.0, salInv: 204, fuegoInv: 222, jalInv: 216 },
-  { tienda: "MT MAT Las Brisas", salDos: 166.0, fuegoDos: 77.5, jalDos: 145.7, salInv: 83, fuegoInv: 84, jalInv: 85 },
-  { tienda: "MT MTY Metroplex", salDos: 0.0, fuegoDos: 0.0, jalDos: 0.0, salInv: 97, fuegoInv: 129, jalInv: 114 },
+  { tienda: "MT NVO Reforma", salDos: 6.8, fuegoDos: 24.8, jalDos: 22.9, salInv: 16, fuegoInv: 39, jalInv: 36 },
+  { tienda: "MT SAL Fundadores", salDos: 13.5, fuegoDos: 68.7, jalDos: 23.5, salInv: 44, fuegoInv: 135, jalInv: 62 },
+  { tienda: "MT MTY Garcia", salDos: 18.7, fuegoDos: 30.0, jalDos: 32.4, salInv: 52, fuegoInv: 74, jalInv: 81 },
+  { tienda: "MT SAL Satelite", salDos: 18.7, fuegoDos: 258.2, jalDos: 21.0, salInv: 91, fuegoInv: 212, jalInv: 99 },
+  { tienda: "MT NVO Revolucion", salDos: 20.2, fuegoDos: 16.1, jalDos: 37.7, salInv: 47, fuegoInv: 42, jalInv: 62 },
+  { tienda: "MT MTY Anzures", salDos: 28.7, fuegoDos: 52.4, jalDos: 17.0, salInv: 41, fuegoInv: 58, jalInv: 28 },
+  { tienda: "MT REY Periferico", salDos: 25.7, fuegoDos: 74.7, jalDos: 31.8, salInv: 56, fuegoInv: 112, jalInv: 67 },
+  { tienda: "MT REY San Fernando", salDos: 28.5, fuegoDos: 85.0, jalDos: 56.0, salInv: 53, fuegoInv: 79, jalInv: 66 },
+  { tienda: "MT MTY Eloy Cavazos", salDos: 28.6, fuegoDos: 44.6, jalDos: 35.9, salInv: 44, fuegoInv: 70, jalInv: 50 },
+  { tienda: "MT MTY Ciudadela", salDos: 29.4, fuegoDos: 39.5, jalDos: 26.4, salInv: 65, fuegoInv: 86, jalInv: 68 },
+  { tienda: "MT MTY Zuazua", salDos: 31.1, fuegoDos: 71.1, jalDos: 40.9, salInv: 61, fuegoInv: 99, jalInv: 73 },
+  { tienda: "MT MTY Cabezada", salDos: 38.0, fuegoDos: 59.6, jalDos: 79.7, salInv: 61, fuegoInv: 83, jalInv: 94 },
+  { tienda: "MT MTY Margaritas", salDos: 48.1, fuegoDos: 60.9, jalDos: 39.0, salInv: 79, fuegoInv: 113, jalInv: 78 },
+  { tienda: "MT REY Rio Bravo", salDos: 54.9, fuegoDos: 65.9, jalDos: 101.6, salInv: 96, fuegoInv: 113, jalInv: 127 },
+  { tienda: "MT MTY Buena Vista", salDos: 77.0, fuegoDos: 112.7, jalDos: 66.7, salInv: 154, fuegoInv: 177, jalInv: 150 },
+  { tienda: "MT MAT Las Brisas", salDos: 79.0, fuegoDos: 68.7, jalDos: 85.1, salInv: 79, fuegoInv: 81, jalInv: 82 },
+  { tienda: "MT REY Aeropuerto", salDos: 88.4, fuegoDos: 103.8, jalDos: 112.1, salInv: 60, fuegoInv: 63, jalInv: 64 },
+  { tienda: "MT MTY Huinala", salDos: 131.8, fuegoDos: 46.3, jalDos: 127.5, salInv: 80, fuegoInv: 81, jalInv: 82 },
+  { tienda: "MT MTY San Roque", salDos: 156.5, fuegoDos: 154.6, jalDos: 140.0, salInv: 95, fuegoInv: 105, jalInv: 105 },
+  { tienda: "MT MTY Lincoln", salDos: 160.0, fuegoDos: 80.3, jalDos: 92.2, salInv: 80, fuegoInv: 86, jalInv: 79 },
+  { tienda: "MT REY Bugambilias", salDos: 275.0, fuegoDos: 869.2, jalDos: 549.0, salInv: 157, fuegoInv: 186, jalInv: 196 },
+  { tienda: "MT MTY Metroplex", salDos: 302.2, fuegoDos: 516.0, jalDos: 355.1, salInv: 97, fuegoInv: 129, jalInv: 114 },
+  { tienda: "MT MTY Plaza del Bosque", salDos: 324.0, fuegoDos: 222.0, jalDos: 115.7, salInv: 81, fuegoInv: 119, jalInv: 95 },
+  { tienda: "MT MTY Valle Sta Maria", salDos: null, fuegoDos: null, jalDos: null, salInv: null, fuegoInv: null, jalInv: null },
+  { tienda: "MT MTY Aztlan", salDos: null, fuegoDos: null, jalDos: null, salInv: null, fuegoInv: null, jalInv: null },
 ];
 
 function DosCell({ dos, inv }: { dos: number | null; inv: number | null }) {
   if (dos === null) {
     return (
-      <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-gray-100 text-gray-500">
-        Sin producto
+      <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-red-100 text-red-600">
+        Agotado
       </span>
     );
   }
@@ -62,7 +64,7 @@ export default function Slide7Detalle340() {
     <SlideWrapper className="bg-[#F5F5F5] p-10">
       <h2 className="text-2xl font-bold text-gray-800 mb-1">Detalle Inventario — PDQ 340gr</h2>
       <p className="text-sm text-gray-500 mb-3">
-        Inventario al 06-Abr-2026 · DDI (Dias de Inventario) · Umbral: 15 dias · 23 tiendas activas (excl. 3 sin producto)
+        Inventario al 12-Abr-2026 · DDI (Dias de Inventario) · Umbral: 15 dias · 25 tiendas (excl. CEDIS Cat Monterrey)
       </p>
 
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden flex-1">
@@ -79,7 +81,19 @@ export default function Slide7Detalle340() {
             </thead>
             <tbody>
               {data.map((r, i) => {
-                if (r.salDos === null) return null;
+                if (r.salDos === null) {
+                  return (
+                    <tr key={i} className="bg-red-50/30 hover:bg-red-50/50 transition-colors border-b border-gray-100 last:border-0">
+                      <td className="px-4 py-1.5 text-gray-800 font-medium">{r.tienda}</td>
+                      <td className="text-center px-3 py-1.5"><DosCell dos={null} inv={null} /></td>
+                      <td className="text-center px-3 py-1.5"><DosCell dos={null} inv={null} /></td>
+                      <td className="text-center px-3 py-1.5"><DosCell dos={null} inv={null} /></td>
+                      <td className="text-center px-3 py-1.5">
+                        <span className="inline-block px-2 py-0.5 rounded-full text-[10px] font-semibold bg-red-50 text-red-600">Agotado</span>
+                      </td>
+                    </tr>
+                  );
+                }
                 const doses = [r.salDos!, r.fuegoDos!, r.jalDos!];
                 const invs = [r.salInv!, r.fuegoInv!, r.jalInv!];
                 const anaquelCount = doses.filter((d, j) => d === 0 && invs[j] > 0).length;
@@ -123,7 +137,7 @@ export default function Slide7Detalle340() {
       </div>
 
       <p className="text-[10px] text-gray-400 mt-2 text-center">
-        Sin OC — PDQ 340gr no esta en sistema de OC de HEB · Excluye Aztlan, Cat Monterrey, Valle Sta Maria (sin producto)
+        Sin OC — PDQ 340gr no esta en sistema de OC de HEB · Excluye CEDIS Cat Monterrey
       </p>
     </SlideWrapper>
   );

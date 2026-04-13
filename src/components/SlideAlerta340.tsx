@@ -1,32 +1,40 @@
 "use client";
 
 import SlideWrapper from "./SlideWrapper";
-import { Eye, ShieldAlert } from "lucide-react";
+import { Eye, ShieldAlert, XCircle } from "lucide-react";
 
 interface TiendaRow {
   tienda: string;
-  salDDI: number;
+  salDDI: number | null;
   salInv: number;
-  fuegoDDI: number;
+  fuegoDDI: number | null;
   fuegoInv: number;
-  jalDDI: number;
+  jalDDI: number | null;
   jalInv: number;
-  status: "Monitoreando" | "OK";
+  status: "Agotado" | "Monitoreando" | "OK";
   sabor: string;
 }
 
 const tiendas: TiendaRow[] = [
-  { tienda: "Reforma", salDDI: 7.6, salInv: 30, fuegoDDI: 18.7, fuegoInv: 49, jalDDI: 20.5, jalInv: 49, status: "Monitoreando", sabor: "Sal" },
-  { tienda: "Anzures", salDDI: 16.9, salInv: 52, fuegoDDI: 51.2, fuegoInv: 67, jalDDI: 12.4, jalInv: 39, status: "Monitoreando", sabor: "Jalapeno" },
-  { tienda: "Fundadores", salDDI: 14.4, salInv: 59, fuegoDDI: 52.4, fuegoInv: 144, jalDDI: 19.2, jalInv: 72, status: "Monitoreando", sabor: "Sal" },
+  { tienda: "Valle Sta Maria", salDDI: null, salInv: 0, fuegoDDI: null, fuegoInv: 0, jalDDI: null, jalInv: 0, status: "Agotado", sabor: "Todos" },
+  { tienda: "Aztlan", salDDI: null, salInv: 0, fuegoDDI: null, fuegoInv: 0, jalDDI: null, jalInv: 0, status: "Agotado", sabor: "Todos" },
+  { tienda: "Reforma", salDDI: 6.8, salInv: 16, fuegoDDI: 24.8, fuegoInv: 39, jalDDI: 22.9, jalInv: 36, status: "Monitoreando", sabor: "Sal" },
+  { tienda: "Fundadores", salDDI: 13.5, salInv: 44, fuegoDDI: 68.7, fuegoInv: 135, jalDDI: 23.5, jalInv: 62, status: "Monitoreando", sabor: "Sal" },
 ];
 
-function ddiColor(ddi: number): string {
+function ddiColor(ddi: number | null): string {
+  if (ddi === null) return "bg-red-100 text-red-700";
   if (ddi < 15) return "bg-red-100 text-red-700";
   return "bg-green-100 text-green-700";
 }
 
 function statusBadge(status: TiendaRow["status"]) {
+  if (status === "Agotado")
+    return (
+      <span className="text-[9px] font-bold px-2 py-0.5 rounded-full bg-red-100 text-red-700 border border-red-200">
+        Agotado
+      </span>
+    );
   if (status === "Monitoreando")
     return (
       <span className="text-[9px] font-bold px-2 py-0.5 rounded-full bg-yellow-100 text-yellow-700 border border-yellow-200">
@@ -40,17 +48,29 @@ function statusBadge(status: TiendaRow["status"]) {
   );
 }
 
+function DdiCell({ ddi, inv }: { ddi: number | null; inv: number }) {
+  if (ddi === null) {
+    return <span className="inline-block text-[11px] font-bold px-2 py-0.5 rounded-md bg-red-100 text-red-700">0 uds</span>;
+  }
+  return (
+    <span className={`inline-block text-[11px] font-bold px-2 py-0.5 rounded-md ${ddiColor(ddi)}`}>
+      {ddi.toFixed(1)}d
+      {inv > 0 && <span className="font-normal ml-1">({inv} uds)</span>}
+    </span>
+  );
+}
+
 export default function SlideAlerta340() {
   return (
     <SlideWrapper className="bg-[#F5F5F5] p-10">
       <div className="flex items-center gap-3 mb-1">
-        <Eye className="w-7 h-7 text-yellow-500" />
+        <XCircle className="w-7 h-7 text-red-500" />
         <h2 className="text-2xl font-bold text-gray-800">
-          PDQ 340gr: Monitoreo — Sin OC en Sistema
+          PDQ 340gr: Alerta — Sin OC en Sistema
         </h2>
       </div>
       <p className="text-sm text-gray-500 mb-5">
-        Tiendas con 1 sabor bajo umbral (DDI &lt; 15) · Sin OC activa para reorden automatico · Inventario al 06-Abr-2026
+        2 tiendas agotadas + 2 con 1 sabor bajo umbral (DDI &lt; 15) · Sin OC activa · Inventario al 12-Abr-2026
       </p>
 
       {/* Table */}
@@ -71,30 +91,15 @@ export default function SlideAlerta340() {
               <tr
                 key={t.tienda}
                 className={`border-b border-gray-100 ${
-                  i % 2 === 0 ? "bg-white" : "bg-gray-50/50"
+                  t.status === "Agotado" ? "bg-red-50/50" : i % 2 === 0 ? "bg-white" : "bg-gray-50/50"
                 }`}
               >
                 <td className="py-2.5 px-4">
                   <span className="text-sm font-semibold text-gray-800">{t.tienda}</span>
                 </td>
-                <td className="py-2.5 px-3 text-center">
-                  <span className={`inline-block text-[11px] font-bold px-2 py-0.5 rounded-md ${ddiColor(t.salDDI)}`}>
-                    {t.salDDI.toFixed(1)}d
-                    {t.salInv > 0 && <span className="font-normal ml-1">({t.salInv} uds)</span>}
-                  </span>
-                </td>
-                <td className="py-2.5 px-3 text-center">
-                  <span className={`inline-block text-[11px] font-bold px-2 py-0.5 rounded-md ${ddiColor(t.fuegoDDI)}`}>
-                    {t.fuegoDDI.toFixed(1)}d
-                    {t.fuegoInv > 0 && <span className="font-normal ml-1">({t.fuegoInv} uds)</span>}
-                  </span>
-                </td>
-                <td className="py-2.5 px-3 text-center">
-                  <span className={`inline-block text-[11px] font-bold px-2 py-0.5 rounded-md ${ddiColor(t.jalDDI)}`}>
-                    {t.jalDDI.toFixed(1)}d
-                    {t.jalInv > 0 && <span className="font-normal ml-1">({t.jalInv} uds)</span>}
-                  </span>
-                </td>
+                <td className="py-2.5 px-3 text-center"><DdiCell ddi={t.salDDI} inv={t.salInv} /></td>
+                <td className="py-2.5 px-3 text-center"><DdiCell ddi={t.fuegoDDI} inv={t.fuegoInv} /></td>
+                <td className="py-2.5 px-3 text-center"><DdiCell ddi={t.jalDDI} inv={t.jalInv} /></td>
                 <td className="py-2.5 px-3 text-center">
                   <span className="text-[11px] font-semibold text-yellow-700">{t.sabor}</span>
                 </td>
@@ -109,20 +114,20 @@ export default function SlideAlerta340() {
 
       {/* Summary row */}
       <div className="grid grid-cols-3 gap-4 mb-4">
-        <div className="bg-green-50 rounded-lg p-3 text-center border border-green-200">
-          <p className="text-green-600 text-xs font-bold">Urgentes</p>
-          <p className="text-2xl font-bold text-gray-800">0</p>
-          <p className="text-[10px] text-gray-500">Ninguna tienda con 2+ sabores bajo umbral</p>
+        <div className="bg-red-50 rounded-lg p-3 text-center border border-red-200">
+          <p className="text-red-600 text-xs font-bold">Agotadas</p>
+          <p className="text-2xl font-bold text-gray-800">2</p>
+          <p className="text-[10px] text-gray-500">Valle Sta Maria y Aztlan — envio manual</p>
         </div>
         <div className="bg-yellow-50 rounded-lg p-3 text-center border border-yellow-200">
           <p className="text-yellow-600 text-xs font-bold">Monitoreando</p>
-          <p className="text-2xl font-bold text-gray-800">3</p>
-          <p className="text-[10px] text-gray-500">Reforma (Sal), Anzures (Jal), Fundadores (Sal)</p>
+          <p className="text-2xl font-bold text-gray-800">2</p>
+          <p className="text-[10px] text-gray-500">Reforma (Sal 6.8d), Fundadores (Sal 13.5d)</p>
         </div>
         <div className="bg-green-50 rounded-lg p-3 text-center border border-green-200">
-          <p className="text-green-600 text-xs font-bold">Entregas detectadas</p>
-          <p className="text-2xl font-bold text-gray-800">Mar 24-27</p>
-          <p className="text-[10px] text-gray-500">Ultima entrega registrada</p>
+          <p className="text-green-600 text-xs font-bold">OK</p>
+          <p className="text-2xl font-bold text-gray-800">21</p>
+          <p className="text-[10px] text-gray-500">Tiendas con inventario saludable</p>
         </div>
       </div>
 
@@ -131,7 +136,7 @@ export default function SlideAlerta340() {
         <ShieldAlert className="w-6 h-6 text-purple-600 flex-shrink-0" />
         <div>
           <p className="text-sm font-bold text-purple-800">
-            Accion pendiente: Registrar 3 SKUs de 340gr en sistema de OC HEB para activar reorden automatico
+            Accion: Envio manual a Valle Sta Maria y Aztlan (240 pzs c/u) + Registrar 3 SKUs en sistema OC HEB
           </p>
           <p className="text-xs text-purple-600 mt-1">
             Papa Casera Sal 340gr · Papa Casera Fuego 340gr · Papa Casera Jalapeno 340gr

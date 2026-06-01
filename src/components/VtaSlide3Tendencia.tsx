@@ -9,6 +9,7 @@ const data = [
   { mes: "Feb", v2025: 256537, v2026: 636954, crec: "+148.3%" },
   { mes: "Mar", v2025: 268241, v2026: 739722, crec: "+175.8%" },
   { mes: "Abr", v2025: 278131, v2026: 859801, crec: "+209.1%" },
+  { mes: "May", v2025: 303385, v2026: 814110, crec: "+168.3%" },
 ];
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -36,10 +37,10 @@ export default function VtaSlide3Tendencia() {
             <Legend
               formatter={(value: string) => <span className="text-sm text-gray-600">{value}</span>}
             />
-            <Bar dataKey="v2025" name="2025" fill="#D4D4D4" radius={[6, 6, 0, 0]} barSize={55}>
+            <Bar dataKey="v2025" name="2025" fill="#D4D4D4" radius={[6, 6, 0, 0]} barSize={50}>
               <LabelList dataKey="v2025" position="top" formatter={formatK} style={{ fill: "#9CA3AF", fontSize: 11 }} />
             </Bar>
-            <Bar dataKey="v2026" name="2026" radius={[6, 6, 0, 0]} barSize={55}>
+            <Bar dataKey="v2026" name="2026" radius={[6, 6, 0, 0]} barSize={50}>
               {data.map((_, i) => (
                 <Cell key={i} fill="#F5A623" />
               ))}
@@ -50,8 +51,8 @@ export default function VtaSlide3Tendencia() {
       </div>
 
       <div className="mt-3 flex justify-between items-center bg-[#FDF8F0] rounded-lg px-5 py-2.5 border border-[#E8DCC8]">
-        <span className="text-gray-500 text-sm">Abril 2026 = mejor mes del YTD · $860K (+209% vs 2025)</span>
-        <span className="text-[#27AE60] font-bold text-sm">Crecimiento acelerado</span>
+        <span className="text-gray-500 text-sm">Abril 2026 = mejor mes del YTD · $860K (+209% vs 2025) · Mayo se mantiene fuerte $814K</span>
+        <span className="text-[#27AE60] font-bold text-sm">Crecimiento sostenido</span>
       </div>
     </SlideWrapper>
   );

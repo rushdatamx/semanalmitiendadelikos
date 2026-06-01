@@ -1,18 +1,18 @@
 "use client";
 
 import SlideWrapper from "./SlideWrapper";
-import { Award, TrendingUp } from "lucide-react";
+import { Award } from "lucide-react";
 
 const productos = [
-  { nombre: "Durito Teja 20PZ", venta: 1374106, pct: 45.2, crec: "+113.9%", pos: true },
-  { nombre: "Papa Natural 45g", venta: 362014, pct: 11.9, crec: "NUEVO", pos: true },
-  { nombre: "Papa Jalapeño 45g", venta: 293868, pct: 9.7, crec: "NUEVO", pos: true },
-  { nombre: "Papa Fuego 45g", venta: 280333, pct: 9.2, crec: "NUEVO", pos: true },
-  { nombre: "Papa Natural 340g", venta: 186703, pct: 6.1, crec: "NUEVO", pos: true },
-  { nombre: "Papa Jalapeño 340g", venta: 176211, pct: 5.8, crec: "NUEVO", pos: true },
-  { nombre: "Papa Fuego 340g", venta: 160489, pct: 5.3, crec: "NUEVO", pos: true },
-  { nombre: "Cheeto 400g", venta: 104034, pct: 3.4, crec: "+34.8%", pos: true },
-  { nombre: "Papa Deshidratada 190g", venta: 101894, pct: 3.4, crec: "+47.6%", pos: true },
+  { nombre: "Durito Teja 20PZ", venta: 1677036, pct: 43.5, crec: "+87.6%", pos: true },
+  { nombre: "Papa Natural 45g", venta: 459925, pct: 11.9, crec: "NUEVO", pos: true },
+  { nombre: "Papa Jalapeño 45g", venta: 378817, pct: 9.8, crec: "NUEVO", pos: true },
+  { nombre: "Papa Fuego 45g", venta: 363008, pct: 9.4, crec: "NUEVO", pos: true },
+  { nombre: "Papa Sal 340g", venta: 257456, pct: 6.7, crec: "NUEVO", pos: true },
+  { nombre: "Papa Jalapeño 340g", venta: 234671, pct: 6.1, crec: "NUEVO", pos: true },
+  { nombre: "Papa Fuego 340g", venta: 215104, pct: 5.6, crec: "NUEVO", pos: true },
+  { nombre: "Papa Deshidratada 190g", venta: 135202, pct: 3.5, crec: "+38.2%", pos: true },
+  { nombre: "Cheeto 400g", venta: 132542, pct: 3.4, crec: "+32.0%", pos: true },
 ];
 
 const maxVenta = productos[0].venta;
@@ -30,7 +30,7 @@ export default function VtaSlide5TopProductos() {
         <Award className="w-7 h-7 text-[#F5A623]" />
         <h2 className="text-3xl font-bold text-gray-800">Top Productos</h2>
       </div>
-      <p className="text-gray-500 text-sm mb-4">Ene-Abr 2026 · Top 9 concentra {topConcentra.toFixed(0)}% del sell-out</p>
+      <p className="text-gray-500 text-sm mb-4">Ene-May 2026 · Top 9 concentra {topConcentra.toFixed(0)}% del sell-out</p>
 
       <div className="flex-1 space-y-2">
         {productos.map((p, i) => {
@@ -79,8 +79,8 @@ export default function VtaSlide5TopProductos() {
       </div>
 
       <div className="mt-3 flex justify-between items-center bg-[#FDF8F0] rounded-lg px-5 py-3 border border-[#E8DCC8]">
-        <span className="text-gray-500 text-sm">Durito Teja = 45% de toda la venta · 7 de 9 productos son NUEVOS (Papas)</span>
-        <span className="text-[#F5A623] font-bold text-lg">$3.04M</span>
+        <span className="text-gray-500 text-sm">Durito Teja = 43.5% de toda la venta · 6 de 9 productos son NUEVOS (Papas)</span>
+        <span className="text-[#F5A623] font-bold text-lg">$3.85M</span>
       </div>
     </SlideWrapper>
   );

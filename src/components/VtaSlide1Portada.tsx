@@ -16,17 +16,17 @@ export default function VtaSlide1Portada() {
           Reporte de Venta Sell-Out
         </h1>
         <p className="text-white/80 text-xl mb-10">
-          Enero — Abril 2026 · Mi Tienda del Ahorro
+          Enero — Mayo 2026 · Mi Tienda del Ahorro
         </p>
 
         <div className="bg-white/20 backdrop-blur-sm rounded-2xl px-10 py-6 border border-white/30">
           <p className="text-white/70 text-sm mb-1">Venta acumulada YTD</p>
-          <p className="text-white text-6xl font-bold">$3.04M</p>
-          <p className="text-white/90 text-xl mt-2 font-semibold">+198.5% vs 2025</p>
+          <p className="text-white text-6xl font-bold">$3.85M</p>
+          <p className="text-white/90 text-xl mt-2 font-semibold">+191.5% vs 2025</p>
         </div>
 
         <p className="text-white/60 text-sm mt-10">
-          Delikos · KAM Sell-Out Report · Mayo 2026
+          Delikos · KAM Sell-Out Report · Junio 2026
         </p>
       </div>
     </SlideWrapper>

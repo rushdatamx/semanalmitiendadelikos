@@ -4,11 +4,11 @@ import SlideWrapper from "./SlideWrapper";
 import { PieChart } from "lucide-react";
 
 const categorias = [
-  { nombre: "Durito Teja", venta: 1374106, pct: 45.2, crec: "+113.9%", pos: true, color: "#F5A623" },
-  { nombre: "Papa 45g (3 sabores)", venta: 936215, pct: 30.8, crec: "NUEVO", pos: true, color: "#F7B500" },
-  { nombre: "Papa 340g (3 sabores)", venta: 523403, pct: 17.2, crec: "NUEVO", pos: true, color: "#FFD666" },
-  { nombre: "Cheeto 400g", venta: 104034, pct: 3.4, crec: "+34.8%", pos: true, color: "#27AE60" },
-  { nombre: "Papa Deshidratada 190g", venta: 101894, pct: 3.4, crec: "+47.6%", pos: true, color: "#2E75B6" },
+  { nombre: "Durito Teja", venta: 1677036, pct: 43.5, crec: "+87.6%", pos: true, color: "#F5A623" },
+  { nombre: "Papa 45g (3 sabores)", venta: 1201750, pct: 31.2, crec: "NUEVO", pos: true, color: "#F7B500" },
+  { nombre: "Papa 340g (3 sabores)", venta: 707231, pct: 18.4, crec: "NUEVO", pos: true, color: "#FFD666" },
+  { nombre: "Papa Deshidratada 190g", venta: 135202, pct: 3.5, crec: "+38.2%", pos: true, color: "#2E75B6" },
+  { nombre: "Cheeto 400g", venta: 132542, pct: 3.4, crec: "+32.0%", pos: true, color: "#27AE60" },
   { nombre: "Otros", venta: 88, pct: 0.0, crec: "-99.9%", pos: false, color: "#9CA3AF" },
 ];
 
@@ -62,7 +62,7 @@ export default function VtaSlide4Categorias() {
         <PieChart className="w-7 h-7 text-[#F5A623]" />
         <h2 className="text-3xl font-bold text-gray-800">Mix de Categorías</h2>
       </div>
-      <p className="text-gray-500 text-sm mb-5">Ene-Abr 2026 · Distribución por línea de producto</p>
+      <p className="text-gray-500 text-sm mb-5">Ene-May 2026 · Distribución por línea de producto</p>
 
       <div className="flex gap-6 flex-1">
         <div className="flex flex-col items-center justify-center w-[280px]">
@@ -104,8 +104,8 @@ export default function VtaSlide4Categorias() {
       </div>
 
       <div className="mt-3 flex justify-between items-center bg-[#FDF8F0] rounded-lg px-5 py-2.5 border border-[#E8DCC8]">
-        <span className="text-gray-500 text-sm">Durito Teja = 45% de la venta · Papas (45g+340g) = 48% combinadas</span>
-        <span className="text-[#F5A623] font-bold">$3.04M</span>
+        <span className="text-gray-500 text-sm">Durito Teja = 43.5% de la venta · Papas (45g+340g) = 49.6% combinadas</span>
+        <span className="text-[#F5A623] font-bold">$3.85M</span>
       </div>
     </SlideWrapper>
   );

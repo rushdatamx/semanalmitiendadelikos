@@ -4,15 +4,15 @@ import SlideWrapper from "./SlideWrapper";
 import { Target } from "lucide-react";
 
 const skuPenetracion = [
-  { nombre: "Papa Deshidratada 190g", tiendas: 28, pct: 100, venta: 101894 },
-  { nombre: "Papa Natural 45g", tiendas: 26, pct: 93, venta: 362014 },
-  { nombre: "Papa Fuego 45g", tiendas: 26, pct: 93, venta: 280333 },
-  { nombre: "Papa Jalapeño 45g", tiendas: 26, pct: 93, venta: 293868 },
-  { nombre: "Durito Teja 20PZ", tiendas: 26, pct: 93, venta: 1374106 },
-  { nombre: "Cheeto 400g", tiendas: 26, pct: 93, venta: 104034 },
-  { nombre: "Papa Natural 340g", tiendas: 24, pct: 86, venta: 186703 },
-  { nombre: "Papa Fuego 340g", tiendas: 24, pct: 86, venta: 160489 },
-  { nombre: "Papa Jalapeño 340g", tiendas: 24, pct: 86, venta: 176211 },
+  { nombre: "Papa Deshidratada 190g", tiendas: 28, pct: 100, venta: 135202 },
+  { nombre: "Durito Teja 20PZ", tiendas: 26, pct: 93, venta: 1677036 },
+  { nombre: "Papa Natural 45g", tiendas: 26, pct: 93, venta: 459925 },
+  { nombre: "Papa Jalapeño 45g", tiendas: 26, pct: 93, venta: 378817 },
+  { nombre: "Papa Fuego 45g", tiendas: 26, pct: 93, venta: 363008 },
+  { nombre: "Cheeto 400g", tiendas: 26, pct: 93, venta: 132542 },
+  { nombre: "Papa Sal 340g", tiendas: 24, pct: 86, venta: 257456 },
+  { nombre: "Papa Jalapeño 340g", tiendas: 24, pct: 86, venta: 234671 },
+  { nombre: "Papa Fuego 340g", tiendas: 24, pct: 86, venta: 215104 },
 ];
 
 const totalTiendas = 28;
@@ -24,11 +24,11 @@ export default function VtaSlide6Penetracion() {
         <Target className="w-7 h-7 text-[#F5A623]" />
         <h2 className="text-3xl font-bold text-gray-800">Penetración de SKUs</h2>
       </div>
-      <p className="text-gray-500 text-sm mb-4">Ene-Abr 2026 · Fill rate: 82.9% (232 de 280 combinaciones)</p>
+      <p className="text-gray-500 text-sm mb-4">Ene-May 2026 · Fill rate: 82.9% (232 de 280 combinaciones)</p>
 
       <div className="flex gap-5 flex-1">
         <div className="flex-1 bg-white rounded-xl border border-gray-200 shadow-sm p-4 overflow-hidden">
-          <p className="text-gray-500 text-xs mb-2">SKUs por penetración (9 activos + 1 residual)</p>
+          <p className="text-gray-500 text-xs mb-2">SKUs por penetración (9 activos)</p>
           <div className="overflow-auto max-h-[420px]">
             <table className="w-full text-[12px]">
               <thead className="sticky top-0 bg-gray-50">

@@ -10,6 +10,7 @@ const data = [
   { mes: "Mar", v2025: 268241, v2026: 739722, crec: "+175.8%" },
   { mes: "Abr", v2025: 278131, v2026: 859801, crec: "+209.1%" },
   { mes: "May", v2025: 303385, v2026: 814110, crec: "+168.3%" },
+  { mes: "Jun*", v2025: 157242, v2026: 423088, crec: "+169.1%" },
 ];
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -22,7 +23,7 @@ export default function VtaSlide3Tendencia() {
         <TrendingUp className="w-7 h-7 text-[#F5A623]" />
         <h2 className="text-3xl font-bold text-gray-800">Tendencia Mensual</h2>
       </div>
-      <p className="text-gray-500 text-sm mb-4">Comparativo 2025 vs 2026 · Crecimiento consistente todos los meses</p>
+      <p className="text-gray-500 text-sm mb-4">Comparativo 2025 vs 2026 · *Junio comparado 1-16 en ambos años (corte parcial)</p>
 
       <div className="flex-1 bg-white rounded-xl border border-gray-200 shadow-sm p-5">
         <ResponsiveContainer width="100%" height={420}>
@@ -37,10 +38,10 @@ export default function VtaSlide3Tendencia() {
             <Legend
               formatter={(value: string) => <span className="text-sm text-gray-600">{value}</span>}
             />
-            <Bar dataKey="v2025" name="2025" fill="#D4D4D4" radius={[6, 6, 0, 0]} barSize={50}>
+            <Bar dataKey="v2025" name="2025" fill="#D4D4D4" radius={[6, 6, 0, 0]} barSize={42}>
               <LabelList dataKey="v2025" position="top" formatter={formatK} style={{ fill: "#9CA3AF", fontSize: 11 }} />
             </Bar>
-            <Bar dataKey="v2026" name="2026" radius={[6, 6, 0, 0]} barSize={50}>
+            <Bar dataKey="v2026" name="2026" radius={[6, 6, 0, 0]} barSize={42}>
               {data.map((_, i) => (
                 <Cell key={i} fill="#F5A623" />
               ))}
@@ -51,7 +52,7 @@ export default function VtaSlide3Tendencia() {
       </div>
 
       <div className="mt-3 flex justify-between items-center bg-[#FDF8F0] rounded-lg px-5 py-2.5 border border-[#E8DCC8]">
-        <span className="text-gray-500 text-sm">Abril 2026 = mejor mes del YTD · $860K (+209% vs 2025) · Mayo se mantiene fuerte $814K</span>
+        <span className="text-gray-500 text-sm">Abril 2026 = mejor mes del YTD · $860K (+209%) · Junio al día 16 ya supera $423K (+169% vs 1-16 jun 2025)</span>
         <span className="text-[#27AE60] font-bold text-sm">Crecimiento sostenido</span>
       </div>
     </SlideWrapper>

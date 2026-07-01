@@ -4,15 +4,15 @@ import SlideWrapper from "./SlideWrapper";
 import { Target } from "lucide-react";
 
 const skuPenetracion = [
-  { nombre: "Papa Deshidratada 190g", tiendas: 28, pct: 100, venta: 150554 },
-  { nombre: "Durito Teja 20PZ", tiendas: 26, pct: 93, venta: 1842601 },
-  { nombre: "Papa Natural 45g", tiendas: 26, pct: 93, venta: 511282 },
-  { nombre: "Papa Jalapeño 45g", tiendas: 26, pct: 93, venta: 425510 },
-  { nombre: "Papa Fuego 45g", tiendas: 26, pct: 93, venta: 406478 },
-  { nombre: "Cheeto 400g", tiendas: 26, pct: 93, venta: 145742 },
-  { nombre: "Papa Sal 340g", tiendas: 24, pct: 86, venta: 287416 },
-  { nombre: "Papa Jalapeño 340g", tiendas: 24, pct: 86, venta: 264288 },
-  { nombre: "Papa Fuego 340g", tiendas: 24, pct: 86, venta: 242978 },
+  { nombre: "Papa Deshidratada 190g", tiendas: 28, pct: 100, venta: 168496 },
+  { nombre: "Durito Teja 20PZ", tiendas: 26, pct: 93, venta: 1985523 },
+  { nombre: "Papa Natural 45g", tiendas: 26, pct: 93, venta: 564380 },
+  { nombre: "Papa Jalapeño 45g", tiendas: 26, pct: 93, venta: 470592 },
+  { nombre: "Papa Fuego 45g", tiendas: 26, pct: 93, venta: 451995 },
+  { nombre: "Cheeto 400g", tiendas: 26, pct: 93, venta: 158887 },
+  { nombre: "Papa Sal 340g", tiendas: 24, pct: 86, venta: 315242 },
+  { nombre: "Papa Jalapeño 340g", tiendas: 24, pct: 86, venta: 289593 },
+  { nombre: "Papa Fuego 340g", tiendas: 24, pct: 86, venta: 268226 },
 ];
 
 const totalTiendas = 28;
@@ -24,7 +24,7 @@ export default function VtaSlide6Penetracion() {
         <Target className="w-7 h-7 text-[#F5A623]" />
         <h2 className="text-3xl font-bold text-gray-800">Penetración de SKUs</h2>
       </div>
-      <p className="text-gray-500 text-sm mb-4">Ene-16jun 2026 · Fill rate: 82.9% (232 de 280 combinaciones)</p>
+      <p className="text-gray-500 text-sm mb-4">Ene-Jun 2026 · Fill rate: 82.9% (232 de 280 combinaciones)</p>
 
       <div className="flex gap-5 flex-1">
         <div className="flex-1 bg-white rounded-xl border border-gray-200 shadow-sm p-4 overflow-hidden">

@@ -4,12 +4,12 @@ import SlideWrapper from "./SlideWrapper";
 import { TrendingUp, Store, Package, Hash, DollarSign, BarChart3 } from "lucide-react";
 
 const kpis = [
-  { label: "Venta YTD 2026", value: "$4.67M", sub: "Ene-Jun", icon: DollarSign, color: "#F5A623" },
-  { label: "Crecimiento YoY", value: "+185.5%", sub: "vs Ene-Jun 2025", icon: TrendingUp, color: "#27AE60" },
-  { label: "Crec. comparable", value: "+53.8%", sub: "mismos SKUs (like-for-like)", icon: TrendingUp, color: "#27AE60" },
-  { label: "Tiendas activas", value: "28", sub: "de 26 catálogo (+4 nuevas)", icon: Store, color: "#F5A623" },
+  { label: "Venta YTD 2026", value: "$5.43M", sub: "Ene-Jul", icon: DollarSign, color: "#F5A623" },
+  { label: "Crecimiento YoY", value: "+177.7%", sub: "vs Ene-Jul 2025", icon: TrendingUp, color: "#27AE60" },
+  { label: "Crec. base madura", value: "+57.2%", sub: "Durito + Deshidratada + Cheeto", icon: TrendingUp, color: "#27AE60" },
+  { label: "Tiendas activas", value: "29", sub: "26 con venta relevante", icon: Store, color: "#F5A623" },
   { label: "SKUs activos", value: "10", sub: "de 18 catálogo", icon: Package, color: "#F5A623" },
-  { label: "Unidades vendidas", value: "191.6K", sub: "Ene-Jun 2026 (+309%)", icon: Hash, color: "#F5A623" },
+  { label: "Unidades vendidas", value: "220.5K", sub: "Ene-Jul 2026 (+314%)", icon: Hash, color: "#F5A623" },
 ];
 
 const months = [
@@ -19,6 +19,7 @@ const months = [
   { mes: "Abr", v25: 278131, v26: 859801, crec: "+209.1%" },
   { mes: "May", v25: 303385, v26: 814110, crec: "+168.3%" },
   { mes: "Jun", v25: 314995, v26: 819173, crec: "+160.1%" },
+  { mes: "Jul", v25: 317920, v26: 754831, crec: "+137.4%" },
 ];
 
 export default function VtaSlide2KPIs() {
@@ -28,7 +29,7 @@ export default function VtaSlide2KPIs() {
         <BarChart3 className="w-7 h-7 text-[#F5A623]" />
         <h2 className="text-3xl font-bold text-gray-800">KPIs Generales</h2>
       </div>
-      <p className="text-gray-500 text-sm mb-5">Ene-Jun 2026 vs mismo periodo 2025</p>
+      <p className="text-gray-500 text-sm mb-5">Ene-Jul 2026 vs mismo periodo 2025</p>
 
       <div className="grid grid-cols-3 gap-4 mb-5">
         {kpis.map((k, i) => {
@@ -49,8 +50,8 @@ export default function VtaSlide2KPIs() {
       </div>
 
       <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-5 flex-1">
-        <p className="text-gray-500 text-xs mb-3">Resumen mensual · Ene–Jun 2026 vs 2025</p>
-        <div className="grid grid-cols-6 gap-3">
+        <p className="text-gray-500 text-xs mb-3">Resumen mensual · Ene–Jul 2026 vs 2025</p>
+        <div className="grid grid-cols-7 gap-2">
           {months.map((m, i) => (
             <div key={i} className="text-center">
               <p className="text-gray-500 text-sm font-semibold mb-2">{m.mes}</p>

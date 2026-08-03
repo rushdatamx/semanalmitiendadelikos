@@ -11,6 +11,7 @@ const data = [
   { mes: "Abr", v2025: 278131, v2026: 859801, crec: "+209.1%" },
   { mes: "May", v2025: 303385, v2026: 814110, crec: "+168.3%" },
   { mes: "Jun", v2025: 314995, v2026: 819173, crec: "+160.1%" },
+  { mes: "Jul", v2025: 317920, v2026: 754831, crec: "+137.4%" },
 ];
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -23,7 +24,7 @@ export default function VtaSlide3Tendencia() {
         <TrendingUp className="w-7 h-7 text-[#F5A623]" />
         <h2 className="text-3xl font-bold text-gray-800">Tendencia Mensual</h2>
       </div>
-      <p className="text-gray-500 text-sm mb-4">Comparativo 2025 vs 2026 · Ene–Jun (meses completos)</p>
+      <p className="text-gray-500 text-sm mb-4">Comparativo 2025 vs 2026 · Ene–Jul (meses completos)</p>
 
       <div className="flex-1 bg-white rounded-xl border border-gray-200 shadow-sm p-5">
         <ResponsiveContainer width="100%" height={420}>
@@ -52,8 +53,8 @@ export default function VtaSlide3Tendencia() {
       </div>
 
       <div className="mt-3 flex justify-between items-center bg-[#FDF8F0] rounded-lg px-5 py-2.5 border border-[#E8DCC8]">
-        <span className="text-gray-500 text-sm">Abril 2026 = mejor mes del YTD · $860K (+209%) · Junio cierra en $819K (+160% vs jun 2025)</span>
-        <span className="text-[#27AE60] font-bold text-sm">Crecimiento sostenido</span>
+        <span className="text-gray-500 text-sm">Abril 2026 = mejor mes del YTD · $860K (+209%) · Julio cierra en $755K (+137% vs jul 2025, −7.9% vs junio)</span>
+        <span className="text-[#27AE60] font-bold text-sm">7 meses consecutivos creciendo</span>
       </div>
     </SlideWrapper>
   );

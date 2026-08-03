@@ -4,24 +4,24 @@ import SlideWrapper from "./SlideWrapper";
 import { MapPin, TrendingUp } from "lucide-react";
 
 const topTiendas = [
-  { nombre: "MT Mat Las Brisas", venta: 314214, pct: 6.7, crec: "+204.0%" },
-  { nombre: "MT Rey Bugambilias", venta: 303141, pct: 6.5, crec: "+117.0%" },
-  { nombre: "MT Rey Periférico", venta: 281098, pct: 6.0, crec: "+201.0%" },
-  { nombre: "MT Nvo Reforma", venta: 240563, pct: 5.1, crec: "+226.0%" },
-  { nombre: "MT Rey San Fernando", venta: 233895, pct: 5.0, crec: "+132.0%" },
-  { nombre: "MT Nvo Revolución", venta: 229679, pct: 4.9, crec: "+294.0%" },
-  { nombre: "MT Mty Zuazua", venta: 211977, pct: 4.5, crec: "+159.0%" },
-  { nombre: "MT Mty García", venta: 193020, pct: 4.1, crec: "+239.0%" },
-  { nombre: "MT Mty Ciudadela", venta: 192379, pct: 4.1, crec: "+181.0%" },
-  { nombre: "MT Rey Río Bravo", venta: 191654, pct: 4.1, crec: "+165.0%" },
+  { nombre: "MT Mat Las Brisas", venta: 364252, pct: 6.7, crec: "+194.4%" },
+  { nombre: "MT Rey Bugambilias", venta: 347553, pct: 6.4, crec: "+78.5%" },
+  { nombre: "MT Rey Periférico", venta: 337270, pct: 6.2, crec: "+194.4%" },
+  { nombre: "MT Nvo Revolución", venta: 272324, pct: 5.0, crec: "+284.0%" },
+  { nombre: "MT Nvo Reforma", venta: 271151, pct: 5.0, crec: "+218.6%" },
+  { nombre: "MT Rey San Fernando", venta: 268766, pct: 5.0, crec: "+117.0%" },
+  { nombre: "MT Mty Zuazua", venta: 248495, pct: 4.6, crec: "+164.2%" },
+  { nombre: "MT Rey Río Bravo", venta: 226870, pct: 4.2, crec: "+155.5%" },
+  { nombre: "MT Mty Ciudadela", venta: 222753, pct: 4.1, crec: "+178.3%" },
+  { nombre: "MT Mty García", venta: 219450, pct: 4.0, crec: "+251.5%" },
 ];
 
 const bottomTiendas = [
-  { nombre: "MT Valle Sta. María", venta: 102056 },
-  { nombre: "MT 9115 (nueva)", venta: 96860 },
-  { nombre: "MT Margaritas", venta: 90797 },
+  { nombre: "MT Sal Colosio (nueva)", venta: 112336 },
+  { nombre: "MT Mty Margaritas", venta: 104675 },
   { nombre: "MT 2922 (nueva)", venta: 555 },
   { nombre: "MT 2907 (nueva)", venta: 55 },
+  { nombre: "MT 2940 (nueva)", venta: 55 },
 ];
 
 const maxVenta = topTiendas[0].venta;
@@ -33,7 +33,7 @@ export default function VtaSlide7TopTiendas() {
         <MapPin className="w-7 h-7 text-[#F5A623]" />
         <h2 className="text-3xl font-bold text-gray-800">Top 10 Tiendas</h2>
       </div>
-      <p className="text-gray-500 text-sm mb-4">Ene-Jun 2026 · Top 10 concentra 51.2% de la venta</p>
+      <p className="text-gray-500 text-sm mb-4">Ene-Jul 2026 · Top 10 concentra 51.2% de la venta</p>
 
       <div className="flex gap-5 flex-1">
         <div className="flex-1 space-y-1.5">
@@ -77,7 +77,7 @@ export default function VtaSlide7TopTiendas() {
                 <p className="text-[#F5A623] text-2xl font-bold">51.2%</p>
               </div>
               <div className="text-center">
-                <p className="text-gray-400 text-[9px]">Resto (18)</p>
+                <p className="text-gray-400 text-[9px]">Resto (19)</p>
                 <p className="text-gray-600 text-2xl font-bold">48.8%</p>
               </div>
             </div>
@@ -94,12 +94,12 @@ export default function VtaSlide7TopTiendas() {
                 </div>
               ))}
             </div>
-            <p className="text-gray-400 text-[10px] mt-3">2 tiendas nuevas con venta mínima (&lt;$1K)</p>
+            <p className="text-gray-400 text-[10px] mt-3">3 tiendas nuevas con venta mínima (&lt;$1K)</p>
           </div>
 
           <div className="bg-[#27AE60]/5 border border-[#27AE60]/20 rounded-xl px-3 py-2">
             <p className="text-[#27AE60] text-[10px] font-semibold">
-              24/24 tiendas existentes crecen + 4 nuevas
+              24/24 tiendas existentes crecen + 5 nuevas
             </p>
           </div>
         </div>

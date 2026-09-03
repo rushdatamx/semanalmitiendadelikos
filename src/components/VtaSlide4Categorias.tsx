@@ -4,12 +4,12 @@ import SlideWrapper from "./SlideWrapper";
 import { PieChart } from "lucide-react";
 
 const categorias = [
-  { nombre: "Durito Teja", venta: 2322506, pct: 42.8, crec: "+63.6%", pos: true, color: "#F5A623" },
-  { nombre: "Papa 45g (3 sabores)", venta: 1695948, pct: 31.2, crec: "NUEVO", pos: true, color: "#F7B500" },
-  { nombre: "Papa 340g (3 sabores)", venta: 1024247, pct: 18.9, crec: "NUEVO", pos: true, color: "#FFD666" },
-  { nombre: "Papa Deshidratada 190g", venta: 199389, pct: 3.7, crec: "+35.2%", pos: true, color: "#2E75B6" },
-  { nombre: "Cheeto 400g", venta: 185675, pct: 3.4, crec: "+19.5%", pos: true, color: "#27AE60" },
-  { nombre: "Otros", venta: 88, pct: 0.0, crec: "-99.9%", pos: false, color: "#9CA3AF" },
+  { nombre: "Durito Teja", venta: 2670425, pct: 43.6, crec: "+56.3%", pos: true, color: "#F5A623" },
+  { nombre: "Papa 45g (3 sabores)", venta: 1871117, pct: 30.6, crec: "+886.3%", pos: true, color: "#F7B500" },
+  { nombre: "Papa 340g (3 sabores)", venta: 1134009, pct: 18.5, crec: "NUEVO", pos: true, color: "#FFD666" },
+  { nombre: "Papa Deshidratada 190g", venta: 231446, pct: 3.8, crec: "+34.2%", pos: true, color: "#2E75B6" },
+  { nombre: "Cheeto 400g", venta: 213462, pct: 3.5, crec: "+15.9%", pos: true, color: "#27AE60" },
+  { nombre: "Papas Fritas", venta: 88, pct: 0.0, crec: "-100.0%", pos: false, color: "#9CA3AF" },
 ];
 
 function DonutSegment({ segments, size = 220 }: { segments: { pct: number; color: string }[]; size?: number }) {
@@ -62,7 +62,7 @@ export default function VtaSlide4Categorias() {
         <PieChart className="w-7 h-7 text-[#F5A623]" />
         <h2 className="text-3xl font-bold text-gray-800">Mix de Categorías</h2>
       </div>
-      <p className="text-gray-500 text-sm mb-5">Ene-Jul 2026 · Distribución por línea de producto</p>
+      <p className="text-gray-500 text-sm mb-5">Ene-Ago 2026 · Distribución por línea de producto</p>
 
       <div className="flex gap-6 flex-1">
         <div className="flex flex-col items-center justify-center w-[280px]">
@@ -104,8 +104,8 @@ export default function VtaSlide4Categorias() {
       </div>
 
       <div className="mt-3 flex justify-between items-center bg-[#FDF8F0] rounded-lg px-5 py-2.5 border border-[#E8DCC8]">
-        <span className="text-gray-500 text-sm">Durito Teja = 42.8% de la venta · Papas (45g+340g) = 50.1% combinadas</span>
-        <span className="text-[#F5A623] font-bold">$5.43M</span>
+        <span className="text-gray-500 text-sm">Durito Teja = 43.6% de la venta · Papas (45g+340g) = 49.1% combinadas</span>
+        <span className="text-[#F5A623] font-bold">$6.12M</span>
       </div>
     </SlideWrapper>
   );

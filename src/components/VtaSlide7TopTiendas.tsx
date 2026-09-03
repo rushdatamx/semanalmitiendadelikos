@@ -4,21 +4,21 @@ import SlideWrapper from "./SlideWrapper";
 import { MapPin, TrendingUp } from "lucide-react";
 
 const topTiendas = [
-  { nombre: "MT Mat Las Brisas", venta: 364252, pct: 6.7, crec: "+194.4%" },
-  { nombre: "MT Rey Bugambilias", venta: 347553, pct: 6.4, crec: "+78.5%" },
-  { nombre: "MT Rey Periférico", venta: 337270, pct: 6.2, crec: "+194.4%" },
-  { nombre: "MT Nvo Revolución", venta: 272324, pct: 5.0, crec: "+284.0%" },
-  { nombre: "MT Nvo Reforma", venta: 271151, pct: 5.0, crec: "+218.6%" },
-  { nombre: "MT Rey San Fernando", venta: 268766, pct: 5.0, crec: "+117.0%" },
-  { nombre: "MT Mty Zuazua", venta: 248495, pct: 4.6, crec: "+164.2%" },
-  { nombre: "MT Rey Río Bravo", venta: 226870, pct: 4.2, crec: "+155.5%" },
-  { nombre: "MT Mty Ciudadela", venta: 222753, pct: 4.1, crec: "+178.3%" },
-  { nombre: "MT Mty García", venta: 219450, pct: 4.0, crec: "+251.5%" },
+  { nombre: "MT Mat Las Brisas", venta: 401087, pct: 6.6, crec: "+132.1%" },
+  { nombre: "MT Rey Bugambilias", venta: 396427, pct: 6.5, crec: "+62.2%" },
+  { nombre: "MT Rey Periférico", venta: 371384, pct: 6.1, crec: "+160.2%" },
+  { nombre: "MT Rey San Fernando", venta: 306510, pct: 5.0, crec: "+101.8%" },
+  { nombre: "MT Nvo Revolución", venta: 306138, pct: 5.0, crec: "+208.1%" },
+  { nombre: "MT Nvo Reforma", venta: 296212, pct: 4.8, crec: "+172.2%" },
+  { nombre: "MT Mty Zuazua", venta: 290342, pct: 4.7, crec: "+144.5%" },
+  { nombre: "MT Rey Río Bravo", venta: 252900, pct: 4.1, crec: "+120.4%" },
+  { nombre: "MT Mty Ciudadela", venta: 251191, pct: 4.1, crec: "+142.5%" },
+  { nombre: "MT Mty García", venta: 249059, pct: 4.1, crec: "+197.9%" },
 ];
 
 const bottomTiendas = [
-  { nombre: "MT Sal Colosio (nueva)", venta: 112336 },
-  { nombre: "MT Mty Margaritas", venta: 104675 },
+  { nombre: "MT Sal Colosio (nueva)", venta: 123419 },
+  { nombre: "MT Mty Margaritas", venta: 135488 },
   { nombre: "MT 2922 (nueva)", venta: 555 },
   { nombre: "MT 2907 (nueva)", venta: 55 },
   { nombre: "MT 2940 (nueva)", venta: 55 },
@@ -33,7 +33,7 @@ export default function VtaSlide7TopTiendas() {
         <MapPin className="w-7 h-7 text-[#F5A623]" />
         <h2 className="text-3xl font-bold text-gray-800">Top 10 Tiendas</h2>
       </div>
-      <p className="text-gray-500 text-sm mb-4">Ene-Jul 2026 · Top 10 concentra 51.2% de la venta</p>
+      <p className="text-gray-500 text-sm mb-4">Ene-Ago 2026 · Top 10 concentra 51.0% de la venta</p>
 
       <div className="flex gap-5 flex-1">
         <div className="flex-1 space-y-1.5">
@@ -74,11 +74,11 @@ export default function VtaSlide7TopTiendas() {
             <div className="grid grid-cols-2 gap-3">
               <div className="text-center">
                 <p className="text-gray-400 text-[9px]">Top 10</p>
-                <p className="text-[#F5A623] text-2xl font-bold">51.2%</p>
+                <p className="text-[#F5A623] text-2xl font-bold">51.0%</p>
               </div>
               <div className="text-center">
                 <p className="text-gray-400 text-[9px]">Resto (19)</p>
-                <p className="text-gray-600 text-2xl font-bold">48.8%</p>
+                <p className="text-gray-600 text-2xl font-bold">49.0%</p>
               </div>
             </div>
             <p className="text-gray-400 text-[10px] mt-2 text-center">Concentración moderada en Top 10</p>

@@ -4,15 +4,15 @@ import SlideWrapper from "./SlideWrapper";
 import { Target } from "lucide-react";
 
 const skuPenetracion = [
-  { nombre: "Papa Deshidratada 190g", tiendas: 29, pct: 100, venta: 199389 },
-  { nombre: "Durito Teja 20PZ", tiendas: 26, pct: 90, venta: 2322506 },
-  { nombre: "Papa Natural 45g", tiendas: 26, pct: 90, venta: 642881 },
-  { nombre: "Papa Jalapeño 45g", tiendas: 26, pct: 90, venta: 535168 },
-  { nombre: "Papa Fuego 45g", tiendas: 26, pct: 90, venta: 517899 },
-  { nombre: "Cheeto 400g", tiendas: 26, pct: 90, venta: 185675 },
-  { nombre: "Papa Sal 340g", tiendas: 24, pct: 83, venta: 366413 },
-  { nombre: "Papa Jalapeño 340g", tiendas: 24, pct: 83, venta: 338943 },
-  { nombre: "Papa Fuego 340g", tiendas: 24, pct: 83, venta: 318892 },
+  { nombre: "Papa Deshidratada 190g", tiendas: 29, pct: 100, venta: 231446 },
+  { nombre: "Durito Teja 20PZ", tiendas: 26, pct: 90, venta: 2670425 },
+  { nombre: "Papa Natural 45g", tiendas: 26, pct: 90, venta: 711145 },
+  { nombre: "Papa Jalapeño 45g", tiendas: 26, pct: 90, venta: 587724 },
+  { nombre: "Papa Fuego 45g", tiendas: 26, pct: 90, venta: 572248 },
+  { nombre: "Cheeto 400g", tiendas: 26, pct: 90, venta: 213462 },
+  { nombre: "Papa Sal 340g", tiendas: 24, pct: 83, venta: 401627 },
+  { nombre: "Papa Jalapeño 340g", tiendas: 24, pct: 83, venta: 375584 },
+  { nombre: "Papa Fuego 340g", tiendas: 24, pct: 83, venta: 356798 },
 ];
 
 const totalTiendas = 29;
@@ -24,7 +24,7 @@ export default function VtaSlide6Penetracion() {
         <Target className="w-7 h-7 text-[#F5A623]" />
         <h2 className="text-3xl font-bold text-gray-800">Penetración de SKUs</h2>
       </div>
-      <p className="text-gray-500 text-sm mb-4">Ene-Jul 2026 · Fill rate: 80.3% (233 de 290 combinaciones)</p>
+      <p className="text-gray-500 text-sm mb-4">Ene-Ago 2026 · Fill rate: 80.3% (233 de 290 combinaciones)</p>
 
       <div className="flex gap-5 flex-1">
         <div className="flex-1 bg-white rounded-xl border border-gray-200 shadow-sm p-4 overflow-hidden">
